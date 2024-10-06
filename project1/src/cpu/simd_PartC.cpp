@@ -1,119 +1,101 @@
-// Created by Yang Yufan on 2023/9/16.
-// Email: yufanyang1@link.cuhk.edu.cm
-//
-// SIMD (AVX2) implementation of bilateral filtering on a JPEG picture
-//
-
-#include <immintrin.h>  // For AVX2 and SSE instructions
-#include <chrono>
 #include <iostream>
-#include <cstring>  // For memset
+#include <chrono>
+#include <immintrin.h>
+#include "utils.hpp"  // Ensure utils.hpp is properly included
 
-#include "../utils.hpp"
+// Fast exponential approximation using AVX2
+__m256 exp_approx(__m256 x) {
+    __m256 res = _mm256_set1_ps(1.0f);  // Initialize result with the constant term of the series (0! = 1)
+    __m256 fac = res;                   // Factorial starts at 1
+    __m256 pow = res;                   // x^0 is 1
+    __m256 x_pow = x;                   // x^1 is x
 
-// Rough approximation of the exponential function using a polynomial
-inline __m256 exp256_ps(__m256 x) {
-    __m256 a = _mm256_set1_ps(1.0f);
-    __m256 b = _mm256_set1_ps(1.0f / 6.0f);
-    __m256 c = _mm256_set1_ps(1.0f / 24.0f);
-    __m256 d = _mm256_set1_ps(1.0f / 120.0f);
-
-    __m256 x2 = _mm256_mul_ps(x, x);
-    __m256 x3 = _mm256_mul_ps(x2, x);
-    __m256 x4 = _mm256_mul_ps(x2, x2);
-
-    __m256 res;
-    res = _mm256_add_ps(a, x);
-    res = _mm256_add_ps(res, _mm256_mul_ps(b, x2));
-    res = _mm256_add_ps(res, _mm256_mul_ps(c, x3));
-    res = _mm256_add_ps(res, _mm256_mul_ps(d, x4));
+    // Add terms up to x^5/5!
+    for (int n = 1; n <= 5; n++) {
+        fac = _mm256_mul_ps(fac, _mm256_set1_ps((float)n)); // Factorial n!
+        pow = _mm256_div_ps(x_pow, fac);                    // x^n / n!
+        res = _mm256_add_ps(res, pow);                      // Summing up the terms
+        x_pow = _mm256_mul_ps(x_pow, x);                    // x to the power of n+1
+    }
 
     return res;
 }
 
-// Bilateral filter kernel using SIMD
-__m256 bilateral_filter_kernel(unsigned char* buffer, int idx, int width, int height, int num_channels, float sigma_s, float sigma_r) {
-    int radius = 1;
-    float gauss_color_coeff = -0.5 / (sigma_r * sigma_r);
-    float gauss_space_coeff = -0.5 / (sigma_s * sigma_s);
+// Function to approximate the Gaussian function for intensity differences
+inline __m256 gaussian_exp(__m256 x, float sigma) {
+    __m256 inv_sigma = _mm256_set1_ps(-0.5f / (sigma * sigma));
+    __m256 exponent = _mm256_mul_ps(_mm256_mul_ps(x, x), inv_sigma);
+    return exp_approx(exponent); // Use the exp_approx function defined above
+}
 
-    __m256 weight_sum = _mm256_setzero_ps();
-    __m256 pixel_sum = _mm256_setzero_ps();
+// Apply bilateral filter to a single color channel
+void apply_bilateral_soa(const ColorValue* input_channel, ColorValue* output_channel, int width, int height, float sigma_s, float sigma_r) {
+    int index, kernel_idx;
+    __m256 center_pixel, kernel_pixel, diff, weight, accum;
 
-    for (int dy = -radius; dy <= radius; dy++) {
-        for (int dx = -radius; dx <= radius; dx++) {
-            int new_idx = idx + (dy * width + dx) * num_channels;
-            __m256 neighbor_value = _mm256_set1_ps((float)buffer[new_idx]);
-            __m256 pixel_value = _mm256_set1_ps((float)buffer[idx]);
+    for (int row = 1; row < height - 1; ++row) {
+        for (int col = 1; col < width - 1; ++col) {
+            index = row * width + col;
+            center_pixel = _mm256_set1_ps(input_channel[index]);
+            accum = _mm256_setzero_ps();
 
-            __m256 range_diff = _mm256_sub_ps(pixel_value, neighbor_value);
-            __m256 range_weight = _mm256_mul_ps(range_diff, range_diff);
-            range_weight = _mm256_mul_ps(range_weight, _mm256_set1_ps(gauss_color_coeff));
-            range_weight = exp256_ps(range_weight);
+            for (int ky = -1; ky <= 1; ++ky) {
+                for (int kx = -1; kx <= 1; ++kx) {
+                    kernel_idx = (row + ky) * width + (col + kx);
+                    kernel_pixel = _mm256_set1_ps(input_channel[kernel_idx]);
+                    diff = _mm256_sub_ps(center_pixel, kernel_pixel);
 
-            __m256 space_weight = _mm256_set1_ps(dx * dx + dy * dy);
-            space_weight = _mm256_mul_ps(space_weight, _mm256_set1_ps(gauss_space_coeff));
-            space_weight = exp256_ps(space_weight);
-
-            __m256 weight = _mm256_mul_ps(range_weight, space_weight);
-            weight_sum = _mm256_add_ps(weight_sum, weight);
-            __m256 weighted_value = _mm256_mul_ps(weight, neighbor_value);
-            pixel_sum = _mm256_add_ps(pixel_sum, weighted_value);
+                    weight = gaussian_exp(diff, sigma_r);  // Calculate weight using Gaussian of intensity difference
+                    accum = _mm256_add_ps(accum, _mm256_mul_ps(kernel_pixel, weight));
+                }
+            }
+            output_channel[index] = _mm256_cvtss_f32(_mm256_hadd_ps(accum, accum));  // Horizontal add and convert to scalar
         }
     }
-    return _mm256_div_ps(pixel_sum, weight_sum);
 }
 
 int main(int argc, char** argv) {
     if (argc != 3) {
-        std::cerr << "Invalid argument, should be: ./executable /path/to/input/jpeg /path/to/output/jpeg\n";
-        return -1;
+        std::cerr << "Usage: ./bilateral_filter <input_jpeg_path> <output_jpeg_path>\n";
+        return 1;
     }
 
-    const char* input_filepath = argv[1];
-    std::cout << "Input file from: " << input_filepath << "\n";
-    auto input_jpeg = read_from_jpeg(input_filepath);
-    if (input_jpeg.buffer == nullptr) {
-        std::cerr << "Failed to read input JPEG image\n";
-        return -1;
+    // Read input JPEG into SOA format
+    JpegSOA input_jpeg = read_jpeg_soa(argv[1]);
+    if (input_jpeg.r_values == nullptr) {
+        std::cerr << "Failed to read input JPEG image.\n";
+        return 1;
     }
 
-    unsigned char* filteredImage = new unsigned char[input_jpeg.width * input_jpeg.height * input_jpeg.num_channels];
-    memset(filteredImage, 0, input_jpeg.width * input_jpeg.height * input_jpeg.num_channels);
+    // Allocate output channels
+    ColorValue* output_r = new ColorValue[input_jpeg.width * input_jpeg.height];
+    ColorValue* output_g = new ColorValue[input_jpeg.width * input_jpeg.height];
+    ColorValue* output_b = new ColorValue[input_jpeg.width * input_jpeg.height];
 
-    auto start_time = std::chrono::high_resolution_clock::now(); // Start recording time
+    // Start timer
+    auto start_time = std::chrono::high_resolution_clock::now();
 
-    // Apply bilateral filter using SIMD for each pixel
-    for (int y = 1; y < input_jpeg.height - 1; y++) {
-        for (int x = 1; x < input_jpeg.width - 1; x++) {
-            for (int c = 0; c < input_jpeg.num_channels; c++) {
-                int idx = (y * input_jpeg.width + x) * input_jpeg.num_channels + c;
-                __m256 result = bilateral_filter_kernel(input_jpeg.buffer, idx, input_jpeg.width, input_jpeg.height, input_jpeg.num_channels, 2.0f, 50.0f);
-                float output;
+    // Apply bilateral filter to each channel
+    apply_bilateral_soa(input_jpeg.r_values, output_r, input_jpeg.width, input_jpeg.height, 2.0f, 50.0f);
+    apply_bilateral_soa(input_jpeg.g_values, output_g, input_jpeg.width, input_jpeg.height, 2.0f, 50.0f);
+    apply_bilateral_soa(input_jpeg.b_values, output_b, input_jpeg.width, input_jpeg.height, 2.0f, 50.0f);
 
-                // Extract the lower 128 bits of the result
-                __m128 result_low = _mm256_castps256_ps128(result);
-
-                // Store the first float from the result
-                _mm_store_ss(&output, result_low);
-                filteredImage[idx] = static_cast<unsigned char>(output);
-            }
-        }
-    }
-
-    auto end_time = std::chrono::high_resolution_clock::now(); // Stop recording time
+    // Stop timer
+    auto end_time = std::chrono::high_resolution_clock::now();
     auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-    std::cout << "Transformation Complete!" << std::endl;
-    std::cout << "Execution Time: " << elapsed_time.count() << " milliseconds\n";
+    std::cout << "Filtering completed in " << elapsed_time.count() << " milliseconds.\n";
 
-    const char* output_filepath = argv[2];
-    std::cout << "Output file to: " << output_filepath << "\n";
-    if (!export_jpeg({filteredImage, input_jpeg.width, input_jpeg.height, input_jpeg.num_channels, input_jpeg.color_space}, output_filepath)) {
-        std::cerr << "Failed to write output JPEG\n";
-        delete[] filteredImage;
-        return -1;
+    // Write output JPEG
+    JpegSOA output_jpeg{output_r, output_g, output_b, input_jpeg.width, input_jpeg.height, input_jpeg.num_channels, input_jpeg.color_space};
+    if (export_jpeg(output_jpeg, argv[2]) != 0) {
+        std::cerr << "Failed to write output JPEG image.\n";
+        return 1;
     }
 
-    delete[] filteredImage;
+    // Cleanup
+    delete[] output_r;
+    delete[] output_g;
+    delete[] output_b;
+
     return 0;
 }
