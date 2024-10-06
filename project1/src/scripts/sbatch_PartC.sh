@@ -18,17 +18,17 @@ echo "Current directory: ${CURRENT_DIR}"
 
 # Sequential PartC (Array-of-Structure)
 echo "Sequential PartC Array-of-Structure (Optimized with -O2)"
-srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/sequential_PartC_aos ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
+srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/sequential_PartC_aos ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/result/4K-Bilateral-seq-aos.jpg
 echo ""
 
 # Sequential PartC (Structure-of-Array)
 echo "Sequential PartC Structure-of-Array (Optimized with -O2)"
-srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/sequential_PartC_soa ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
+srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/sequential_PartC_soa ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/result/4K-Bilateral-seq-soa.jpg
 echo ""
 
 # SIMD PartC
 echo "SIMD(AVX2) PartC (Optimized with -O2)"
-srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/simd_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
+srun -n 1 --cpus-per-task 1 ${CURRENT_DIR}/../../build/src/cpu/simd_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/result/4K-Bilateral-simd.jpg
 echo ""
 
 # MPI PartC
@@ -36,7 +36,7 @@ echo "MPI PartC (Optimized with -O2)"
 for num_processes in 1 2 4 8 16 32
 do
   echo "Number of processes: $num_processes"
-  srun -n $num_processes --cpus-per-task 1 --mpi=pmi2 ${CURRENT_DIR}/../../build/src/cpu/mpi_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
+  srun -n $num_processes --cpus-per-task 1 --mpi=pmi2 ${CURRENT_DIR}/../../build/src/cpu/mpi_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/result/4K-Bilateral-mpi.jpg
   echo ""
 done
 
@@ -45,7 +45,7 @@ echo "Pthread PartC (Optimized with -O2)"
 for num_cores in 1 2 4 8 16 32
 do
   echo "Number of cores: $num_cores"
-  srun -n 1 --cpus-per-task $num_cores ${CURRENT_DIR}/../../build/src/cpu/pthread_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg ${num_cores}
+  srun -n 1 --cpus-per-task $num_cores ${CURRENT_DIR}/../../build/src/cpu/pthread_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/result/4K-Bilateral-pth.jpg ${num_cores}
   echo ""
 done
 
@@ -54,18 +54,18 @@ echo "OpenMP PartC (Optimized with -O2)"
 for num_cores in 1 2 4 8 16 32
 do
   echo "Number of cores: $num_cores"
-  srun -n 1 --cpus-per-task $num_cores ${CURRENT_DIR}/../../build/src/cpu/openmp_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg ${num_cores}
+  srun -n 1 --cpus-per-task $num_cores ${CURRENT_DIR}/../../build/src/cpu/openmp_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/result/4K-Bilateral-openmp.jpg ${num_cores}
   echo ""
 done
 
 # CUDA PartC
 echo "CUDA PartC"
-srun -n 1 --gpus 1 ${CURRENT_DIR}/../../build/src/gpu/cuda_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
+srun -n 1 --gpus 1 ${CURRENT_DIR}/../../build/src/gpu/cuda_PartC ${CURRENT_DIR}/../../images/result/4K-RGB-cuda.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
 echo ""
 
 # OpenACC PartC
 echo "OpenACC PartC"
-srun -n 1 --gpus 1 ${CURRENT_DIR}/../../build/src/gpu/openacc_PartC ${CURRENT_DIR}/../../images/4K-RGB.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
+srun -n 1 --gpus 1 ${CURRENT_DIR}/../../build/src/gpu/openacc_PartC ${CURRENT_DIR}/../../images/result/4K-RGB-openacc.jpg ${CURRENT_DIR}/../../images/4K-Bilateral.jpg
 echo ""
 
 # Triton PartC

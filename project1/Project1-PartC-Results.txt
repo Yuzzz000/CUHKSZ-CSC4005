@@ -1,28 +1,30 @@
 Current directory: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts
 Sequential PartC Array-of-Structure (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/result/4K-Bilateral-seq-aos.jpg
 Transformation Complete!
-Execution Time: 53506 milliseconds
+Execution Time: 53703 milliseconds
 
 Sequential PartC Structure-of-Array (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/result/4K-Bilateral-seq-soa.jpg
 Transformation Complete!
-Execution Time: 37373 milliseconds
+Execution Time: 37457 milliseconds
 
 SIMD(AVX2) PartC (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 612 milliseconds
+Execution Time: 2229 milliseconds
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/result/4K-Bilateral-simd.jpg
+Failed to write output JPEG
+srun: error: node03: task 0: Exited with exit code 255
 
 MPI PartC (Optimized with -O2)
 Number of processes: 1
 Failed to write output JPEG to file
-srun: error: node04: task 0: Exited with exit code 255
+srun: error: node03: task 0: Exited with exit code 255
 
 Number of processes: 2
 srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-slurmstepd: error: *** STEP 220385.4 ON node04 CANCELLED AT 2024-10-06T04:53:01 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 220385 ON node04 CANCELLED AT 2024-10-06T04:53:01 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 220811 ON node03 CANCELLED AT 2024-10-06T08:19:33 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 220811.4 ON node03 CANCELLED AT 2024-10-06T08:19:33 DUE TO TIME LIMIT ***
