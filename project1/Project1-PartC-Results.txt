@@ -3,23 +3,16 @@ Sequential PartC Array-of-Structure (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3731 milliseconds
+Execution Time: 53506 milliseconds
 
 Sequential PartC Structure-of-Array (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3640 milliseconds
+Execution Time: 37373 milliseconds
 
 SIMD(AVX2) PartC (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 609 milliseconds
-
-MPI PartC (Optimized with -O2)
-Number of processes: 1
-Failed to write output JPEG to file
-srun: error: node02: task 0: Exited with exit code 255
-
-Number of processes: 2
+Execution Time: 612 milliseconds

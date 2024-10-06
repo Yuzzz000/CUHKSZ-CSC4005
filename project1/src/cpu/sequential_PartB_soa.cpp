@@ -2,7 +2,7 @@
 // Created by Zhong Yebin on 2023/9/16.
 // Email: yebinzhong@link.cuhk.edu.cn
 //
-// Sequential implementation of converting a JPEG from RGB to gray
+
 
 #include <memory.h>
 
