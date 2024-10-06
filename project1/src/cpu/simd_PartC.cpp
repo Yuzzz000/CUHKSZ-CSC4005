@@ -1,3 +1,9 @@
+// Created by Yang Yufan on 2023/9/16.
+// Email: yufanyang1@link.cuhk.edu.cm
+//
+// SIMD (AVX2) implementation of bilateral filtering on a JPEG picture
+//
+
 #include <immintrin.h>  // For AVX2 and SSE instructions
 #include <chrono>
 #include <iostream>
@@ -75,7 +81,7 @@ int main(int argc, char** argv) {
     unsigned char* filteredImage = new unsigned char[input_jpeg.width * input_jpeg.height * input_jpeg.num_channels];
     memset(filteredImage, 0, input_jpeg.width * input_jpeg.height * input_jpeg.num_channels);
 
-    auto start_time = std::chrono::high_resolution_clock::now();
+    auto start_time = std::chrono::high_resolution_clock::now(); // Start recording time
 
     // Apply bilateral filter using SIMD for each pixel
     for (int y = 1; y < input_jpeg.height - 1; y++) {
@@ -95,7 +101,7 @@ int main(int argc, char** argv) {
         }
     }
 
-    auto end_time = std::chrono::high_resolution_clock::now();
+    auto end_time = std::chrono::high_resolution_clock::now(); // Stop recording time
     auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
     std::cout << "Transformation Complete!" << std::endl;
     std::cout << "Execution Time: " << elapsed_time.count() << " milliseconds\n";
