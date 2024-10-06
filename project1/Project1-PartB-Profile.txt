@@ -1,0 +1,799 @@
+Current directory: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts
+Sequential PartB (Array-of-Structure) (Optimized with -O2)
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7216 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/sequential_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         11,408.48 msec task-clock:u              #    0.943 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           872,196      page-faults:u             #    0.076 M/sec                  
+    29,289,734,277      cycles:u                  #    2.567 GHz                    
+    86,410,669,197      instructions:u            #    2.95  insn per cycle         
+     5,893,383,395      branches:u                #  516.579 M/sec                  
+        96,182,102      branch-misses:u           #    1.63% of all branches        
+
+      12.104433336 seconds time elapsed
+
+      10.164807000 seconds user
+       1.252020000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7181 milliseconds
+--------------------------------------------------------------------------------
+Runtime: 13.1713 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 430.237 Joules
+Power consumed: 32.6649 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 45.2389 Joules
+Power consumed: 3.43467 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+
+Sequential PartB (Structure-of-Array) (Optimized with -O2)
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 6619 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/sequential_PartB_soa /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         14,093.51 msec task-clock:u              #    0.949 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           691,128      page-faults:u             #    0.049 M/sec                  
+    37,315,300,516      cycles:u                  #    2.648 GHz                    
+   103,804,426,169      instructions:u            #    2.78  insn per cycle         
+    13,615,964,100      branches:u                #  966.116 M/sec                  
+        96,694,006      branch-misses:u           #    0.71% of all branches        
+
+      14.852993993 seconds time elapsed
+
+      12.953726000 seconds user
+       1.147760000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 6635 milliseconds
+--------------------------------------------------------------------------------
+Runtime: 15.9911 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 523.175 Joules
+Power consumed: 32.7167 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 54.8482 Joules
+Power consumed: 3.42993 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+
+SIMD(AVX2) PartB (Optimized with -O2)
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 4230 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/simd_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+          8,477.35 msec task-clock:u              #    0.914 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           827,480      page-faults:u             #    0.098 M/sec                  
+    20,934,010,734      cycles:u                  #    2.469 GHz                    
+    44,924,335,375      instructions:u            #    2.15  insn per cycle         
+     4,409,282,938      branches:u                #  520.125 M/sec                  
+       100,632,391      branch-misses:u           #    2.28% of all branches        
+
+       9.272070161 seconds time elapsed
+
+       7.323905000 seconds user
+       1.162397000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 4242 milliseconds
+--------------------------------------------------------------------------------
+Runtime: 10.3538 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 336.522 Joules
+Power consumed: 32.5021 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 36.0345 Joules
+Power consumed: 3.4803 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+
+MPI PartB (Optimized with -O2)
+Number of processes: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7232 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         11,460.10 msec task-clock:u              #    0.938 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           872,077      page-faults:u             #    0.076 M/sec                  
+    29,373,700,435      cycles:u                  #    2.563 GHz                    
+    86,413,136,390      instructions:u            #    2.94  insn per cycle         
+     5,893,858,032      branches:u                #  514.294 M/sec                  
+        96,191,877      branch-misses:u           #    1.63% of all branches        
+
+      12.215971038 seconds time elapsed
+
+      10.237916000 seconds user
+       1.230945000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7214 milliseconds
+--------------------------------------------------------------------------------
+Runtime: 13.2792 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 436.125 Joules
+Power consumed: 32.8427 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 45.4704 Joules
+Power consumed: 3.42417 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+
+Number of processes: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7083 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         13,234.79 msec task-clock:u              #    0.947 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           802,234      page-faults:u             #    0.061 M/sec                  
+    33,969,792,179      cycles:u                  #    2.567 GHz                    
+    53,080,053,660      instructions:u            #    1.56  insn per cycle         
+     3,571,417,791      branches:u                #  269.851 M/sec                  
+        98,820,556      branch-misses:u           #    2.77% of all branches        
+
+      13.973047268 seconds time elapsed
+
+      11.813731000 seconds user
+       1.429699000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         13,968.63 msec task-clock:u              #    0.996 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           497,778      page-faults:u             #    0.036 M/sec                  
+    36,785,744,230      cycles:u                  #    2.633 GHz                    
+    63,346,622,780      instructions:u            #    1.72  insn per cycle         
+     8,371,513,778      branches:u                #  599.308 M/sec                  
+        15,376,189      branch-misses:u           #    0.18% of all branches        
+
+      14.020112793 seconds time elapsed
+
+      12.862938000 seconds user
+       1.106328000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7072 milliseconds
+--------------------------------------------------------------------------------
+Runtime: 15.0391 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 513.386 Joules
+Power consumed: 34.1367 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 52.1332 Joules
+Power consumed: 3.46651 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Runtime: 15.0875 s
+Measure for socket 0 on CPU 20
+Domain PKG:
+Energy consumed: 515.081 Joules
+Power consumed: 34.1396 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 52.317 Joules
+Power consumed: 3.46757 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+
+Number of processes: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 3689 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+          9,616.56 msec task-clock:u              #    0.951 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           596,653      page-faults:u             #    0.062 M/sec                  
+    24,138,404,064      cycles:u                  #    2.510 GHz                    
+    36,324,490,497      instructions:u            #    1.50  insn per cycle         
+     2,384,550,815      branches:u                #  247.963 M/sec                  
+        98,077,930      branch-misses:u           #    4.11% of all branches        
+
+      10.113277262 seconds time elapsed
+
+       8.372277000 seconds user
+       1.249057000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         10,133.18 msec task-clock:u              #    0.996 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           322,052      page-faults:u             #    0.032 M/sec                  
+    26,381,499,536      cycles:u                  #    2.603 GHz                    
+    44,948,480,666      instructions:u            #    1.70  insn per cycle         
+     6,793,345,014      branches:u                #  670.406 M/sec                  
+        16,275,868      branch-misses:u           #    0.24% of all branches        
+
+      10.177564901 seconds time elapsed
+
+       9.256531000 seconds user
+       0.877484000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         10,141.24 msec task-clock:u              #    0.996 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           317,053      page-faults:u             #    0.031 M/sec                  
+    26,504,055,398      cycles:u                  #    2.613 GHz                    
+    42,742,746,382      instructions:u            #    1.61  insn per cycle         
+     6,229,326,620      branches:u                #  614.257 M/sec                  
+        15,733,492      branch-misses:u           #    0.25% of all branches        
+
+      10.183267817 seconds time elapsed
+
+       9.250956000 seconds user
+       0.890781000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg':
+
+         10,142.64 msec task-clock:u              #    0.996 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           309,363      page-faults:u             #    0.031 M/sec                  
+    26,504,201,498      cycles:u                  #    2.613 GHz                    
+    42,742,166,892      instructions:u            #    1.61  insn per cycle         
+     6,229,191,284      branches:u                #  614.159 M/sec                  
+        15,231,313      branch-misses:u           #    0.24% of all branches        
+
+      10.187359998 seconds time elapsed
+
+       9.244599000 seconds user
+       0.898822000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 3682 milliseconds
+--------------------------------------------------------------------------------
+Runtime: 11.5167 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 445.856 Joules
+Power consumed: 38.714 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 41.8084 Joules
+Power consumed: 3.63025 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Runtime: 11.5721 s
+Measure for socket 0 on CPU 20
+Domain PKG:
+Energy consumed: 448.113 Joules
+Power consumed: 38.7237 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 42.0298 Joules
+Power consumed: 3.63201 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Runtime: 11.5835 s
+Measure for socket 0 on CPU 21
+Domain PKG:
+Energy consumed: 448.505 Joules
+Power consumed: 38.7193 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 42.0693 Joules
+Power consumed: 3.63183 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Runtime: 11.5852 s
+Measure for socket 0 on CPU 1
+Domain PKG:
+Energy consumed: 448.529 Joules
+Power consumed: 38.7157 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 42.0803 Joules
+Power consumed: 3.63224 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+
+Pthread PartB (Optimized with -O2)
+Number of cores: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 8039 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/pthread_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg 1':
+
+         11,814.87 msec task-clock:u              #    0.943 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           665,799      page-faults:u             #    0.056 M/sec                  
+    30,783,250,226      cycles:u                  #    2.605 GHz                    
+    88,854,685,334      instructions:u            #    2.89  insn per cycle         
+     5,883,301,778      branches:u                #  497.957 M/sec                  
+        96,154,528      branch-misses:u           #    1.63% of all branches        
+
+      12.531791457 seconds time elapsed
+
+      10.725907000 seconds user
+       1.098147000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+--------------------------------------------------------------------------------
+Runtime: 15.6915 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 505.449 Joules
+Power consumed: 32.2117 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 54.4069 Joules
+Power consumed: 3.46729 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+srun: error: node02: task 0: Exited with exit code 139
+
+Number of cores: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7222 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/pthread_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg 2':
+
+         18,232.66 msec task-clock:u              #    1.552 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           677,169      page-faults:u             #    0.037 M/sec                  
+    49,020,135,375      cycles:u                  #    2.689 GHz                    
+    88,846,662,312      instructions:u            #    1.81  insn per cycle         
+     5,883,306,760      branches:u                #  322.680 M/sec                  
+        96,255,330      branch-misses:u           #    1.64% of all branches        
+
+      11.748415284 seconds time elapsed
+
+      16.996412000 seconds user
+       1.243323000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+--------------------------------------------------------------------------------
+Runtime: 14.9221 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 475.499 Joules
+Power consumed: 31.8655 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 51.7523 Joules
+Power consumed: 3.46817 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+srun: error: node02: task 0: Exited with exit code 139
+
+Number of cores: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 3616 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/pthread_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg 4':
+
+         18,239.52 msec task-clock:u              #    2.226 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           615,464      page-faults:u             #    0.034 M/sec                  
+    49,072,650,921      cycles:u                  #    2.690 GHz                    
+    88,854,346,783      instructions:u            #    1.81  insn per cycle         
+     5,883,259,682      branches:u                #  322.556 M/sec                  
+        96,119,276      branch-misses:u           #    1.63% of all branches        
+
+       8.192159090 seconds time elapsed
+
+      17.121588000 seconds user
+       1.127799000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+--------------------------------------------------------------------------------
+Runtime: 11.4567 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 372.065 Joules
+Power consumed: 32.4758 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 40.7466 Joules
+Power consumed: 3.55658 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+srun: error: node02: task 0: Exited with exit code 139
+
+OpenMP PartB (Optimized with -O2)
+Number of cores: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 8467 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/openmp_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg 1':
+
+         12,265.60 msec task-clock:u              #    0.942 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           695,553      page-faults:u             #    0.057 M/sec                  
+    32,018,188,026      cycles:u                  #    2.610 GHz                    
+    89,603,214,245      instructions:u            #    2.80  insn per cycle         
+     5,883,264,462      branches:u                #  479.656 M/sec                  
+        96,122,415      branch-misses:u           #    1.63% of all branches        
+
+      13.017854396 seconds time elapsed
+
+      11.191112000 seconds user
+       1.083880000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Runtime: 16.0462 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 510.716 Joules
+Power consumed: 31.8279 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 55.7468 Joules
+Power consumed: 3.47415 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+srun: error: node02: task 0: Exited with exit code 139
+
+Number of cores: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 7302 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/openmp_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg 2':
+
+         18,409.94 msec task-clock:u              #    1.587 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           679,674      page-faults:u             #    0.037 M/sec                  
+    49,541,804,442      cycles:u                  #    2.691 GHz                    
+    89,599,786,861      instructions:u            #    1.81  insn per cycle         
+     5,884,549,731      branches:u                #  319.640 M/sec                  
+        96,784,560      branch-misses:u           #    1.64% of all branches        
+
+      11.598216757 seconds time elapsed
+
+      17.259412000 seconds user
+       1.154419000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+--------------------------------------------------------------------------------
+Runtime: 14.9265 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 477.903 Joules
+Power consumed: 32.0171 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 51.9873 Joules
+Power consumed: 3.48289 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+srun: error: node02: task 0: Exited with exit code 139
+
+Number of cores: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 3657 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/openmp_PartB /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg 4':
+
+         18,394.72 msec task-clock:u              #    2.300 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           608,643      page-faults:u             #    0.033 M/sec                  
+    49,544,272,707      cycles:u                  #    2.693 GHz                    
+    89,608,142,159      instructions:u            #    1.81  insn per cycle         
+     5,886,881,093      branches:u                #  320.031 M/sec                  
+        96,136,152      branch-misses:u           #    1.63% of all branches        
+
+       7.998699230 seconds time elapsed
+
+      17.189111000 seconds user
+       1.201443000 seconds sys
+
+
+
+Energy Profiling
+--------------------------------------------------------------------------------
+CPU name:	Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz
+CPU type:	Intel Cascadelake SP processor
+CPU clock:	2.39 GHz
+--------------------------------------------------------------------------------
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+--------------------------------------------------------------------------------
+Runtime: 11.4467 s
+Measure for socket 0 on CPU 0
+Domain PKG:
+Energy consumed: 371.099 Joules
+Power consumed: 32.4197 Watt
+Domain PP0:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+Domain DRAM:
+Energy consumed: 40.6529 Joules
+Power consumed: 3.5515 Watt
+Domain PLATFORM:
+Energy consumed: 0 Joules
+Power consumed: 0 Watt
+--------------------------------------------------------------------------------
+srun: error: node02: task 0: Exited with exit code 139
+
+CUDA PartB
+Collecting data...
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+GPU Execution Time: 33.1902 milliseconds
+Processing events...
+Saving temporary "/tmp/nsys-report-74cc-f0ac-526d-cc4a.qdstrm" file to disk...
+
+Creating final output files...
+Processing [0%                                                                ]Processing [2%                                                                ]Processing [4%                                                                ]Processing [====12%                                                           ]Processing [==========21%                                                     ]Processing [==================32%                                             ]Processing [====================36%                                           ]Processing [=====================37%                                          ]Processing [=========================43%                                      ]Processing [==============================50%                                 ]Processing [================================54%                               ]Processing [=================================55%                              ]Processing [=================================56%                              ]Processing [==================================57%                             ]Processing [===================================58%                            ]Processing [===================================59%                            ]Processing [====================================60%                           ]Processing [=====================================62%                          ]Processing [======================================63%                         ]Processing [=======================================64%                        ]Processing [=======================================65%                        ]Processing [========================================66%                       ]Processing [============================================72%                   ]Processing [=============================================73%                  ]Processing [==============================================75%                 ]Processing [===============================================76%                ]Processing [===============================================77%                ]Processing [================================================78%               ]Processing [=================================================79%              ]Processing [=================================================80%              ]Processing [===================================================82%            ]Processing [===================================================83%            ]Processing [========================================================90%       ]Processing [=========================================================91%      ]Processing [=========================================================92%      ]Processing [==========================================================93%     ]Processing [===========================================================94%    ]Processing [============================================================96%   ]Processing [=============================================================98%  ]Processing [==============================================================100%]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-74cc-f0ac-526d-cc4a.qdrep"
+Unable to create output file /nfsmnt/121090741/CUHKSZ-CSC4005/project1/./profile/cuda_PartB.qdstrm : No such file or directory
+Please manually fetch report file(s) from:
+* /tmp/nsys-report-74cc-f0ac-526d-cc4a.qdrep
+
+Workload failed: No such file or directory
+srun: error: node02: task 0: Exited with exit code 255
+
+OpenACC PartB
+Collecting data...
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Smooth.jpg
+Transformation Complete!
+Execution Time: 23 milliseconds
+Processing events...
+Saving temporary "/tmp/nsys-report-e503-1aaf-a0b8-51ec.qdstrm" file to disk...
+
+Creating final output files...
+Processing [0%                                                                ]Processing [2%                                                                ]Processing [4%                                                                ]Processing [===8%                                                             ]Processing [====11%                                                           ]Processing [======14%                                                         ]Processing [==========21%                                                     ]Processing [================29%                                               ]Processing [====================35%                                           ]Processing [====================36%                                           ]Processing [========================41%                                       ]Processing [============================48%                                   ]Processing [===============================52%                                ]Processing [===============================53%                                ]Processing [================================54%                               ]Processing [=================================55%                              ]Processing [=================================56%                              ]Processing [==================================57%                             ]Processing [===================================59%                            ]Processing [====================================60%                           ]Processing [=====================================61%                          ]Processing [=====================================62%                          ]Processing [======================================63%                         ]Processing [=======================================64%                        ]Processing [==========================================69%                     ]Processing [===========================================70%                    ]Processing [===========================================71%                    ]Processing [============================================72%                   ]Processing [=============================================73%                  ]Processing [=============================================74%                  ]Processing [==============================================75%                 ]Processing [===============================================76%                ]Processing [===============================================77%                ]Processing [================================================78%               ]Processing [=================================================79%              ]Processing [=====================================================86%          ]Processing [======================================================87%         ]Processing [=======================================================88%        ]Processing [=======================================================89%        ]Processing [========================================================90%       ]Processing [==========================================================93%     ]Processing [============================================================96%   ]Processing [==============================================================99% ]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-e503-1aaf-a0b8-51ec.qdrep"
+Unable to create output file /nfsmnt/121090741/CUHKSZ-CSC4005/project1/./profile/openacc_PartB.qdstrm : No such file or directory
+Please manually fetch report file(s) from:
+* /tmp/nsys-report-e503-1aaf-a0b8-51ec.qdrep
+
+Workload failed: No such file or directory
+srun: error: node02: task 0: Exited with exit code 255
+
+Triton PartB
+

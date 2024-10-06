@@ -1,0 +1,384 @@
+Current directory: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts
+Sequential PartA (Optimized with -O2)
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 629 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/sequential_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          3,535.09 msec task-clock:u              #    0.866 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           303,421      page-faults:u             #    0.086 M/sec                  
+     8,398,260,183      cycles:u                  #    2.376 GHz                    
+    20,488,491,482      instructions:u            #    2.44  insn per cycle         
+     1,427,848,522      branches:u                #  403.907 M/sec                  
+        69,913,874      branch-misses:u           #    4.90% of all branches        
+
+       4.082801028 seconds time elapsed
+
+       2.916093000 seconds user
+       0.625805000 seconds sys
+
+
+
+SIMD(AVX2) PartA (Optimized with -O2)
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 430 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/simd_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          3,854.98 msec task-clock:u              #    0.890 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           526,955      page-faults:u             #    0.137 M/sec                  
+     7,957,888,578      cycles:u                  #    2.064 GHz                    
+    18,185,921,016      instructions:u            #    2.29  insn per cycle         
+     1,424,699,749      branches:u                #  369.573 M/sec                  
+        56,722,905      branch-misses:u           #    3.98% of all branches        
+
+       4.330734804 seconds time elapsed
+
+       2.832702000 seconds user
+       1.028350000 seconds sys
+
+
+
+MPI PartA (Optimized with -O2)
+Number of processes: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 630 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          3,585.47 msec task-clock:u              #    0.869 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           306,201      page-faults:u             #    0.085 M/sec                  
+     8,476,493,937      cycles:u                  #    2.364 GHz                    
+    20,491,017,063      instructions:u            #    2.42  insn per cycle         
+     1,428,326,394      branches:u                #  398.365 M/sec                  
+        69,969,940      branch-misses:u           #    4.90% of all branches        
+
+       4.126518494 seconds time elapsed
+
+       2.963273000 seconds user
+       0.628996000 seconds sys
+
+
+
+Number of processes: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 772 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          5,159.85 msec task-clock:u              #    0.901 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           362,047      page-faults:u             #    0.070 M/sec                  
+    12,547,706,760      cycles:u                  #    2.432 GHz                    
+    18,107,501,144      instructions:u            #    1.44  insn per cycle         
+     1,333,804,780      branches:u                #  258.497 M/sec                  
+        70,790,553      branch-misses:u           #    5.31% of all branches        
+
+       5.727155034 seconds time elapsed
+
+       4.351887000 seconds user
+       0.809119000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          5,728.52 msec task-clock:u              #    0.993 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           215,404      page-faults:u             #    0.038 M/sec                  
+    14,360,399,339      cycles:u                  #    2.507 GHz                    
+    24,824,762,529      instructions:u            #    1.73  insn per cycle         
+     4,230,094,965      branches:u                #  738.427 M/sec                  
+        14,462,407      branch-misses:u           #    0.34% of all branches        
+
+       5.770894837 seconds time elapsed
+
+       5.003312000 seconds user
+       0.725996000 seconds sys
+
+
+
+Number of processes: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 474 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          4,853.49 msec task-clock:u              #    0.918 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           310,545      page-faults:u             #    0.064 M/sec                  
+    11,819,399,053      cycles:u                  #    2.435 GHz                    
+    16,879,224,519      instructions:u            #    1.43  insn per cycle         
+     1,274,394,675      branches:u                #  262.573 M/sec                  
+        70,772,297      branch-misses:u           #    5.55% of all branches        
+
+       5.285170165 seconds time elapsed
+
+       4.120942000 seconds user
+       0.733743000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          5,305.71 msec task-clock:u              #    0.992 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           220,031      page-faults:u             #    0.041 M/sec                  
+    13,182,102,592      cycles:u                  #    2.485 GHz                    
+    22,336,694,032      instructions:u            #    1.69  insn per cycle         
+     3,864,416,493      branches:u                #  728.351 M/sec                  
+        15,049,837      branch-misses:u           #    0.39% of all branches        
+
+       5.347026481 seconds time elapsed
+
+       4.635508000 seconds user
+       0.670614000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          5,324.18 msec task-clock:u              #    0.991 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           200,174      page-faults:u             #    0.038 M/sec                  
+    13,315,876,452      cycles:u                  #    2.501 GHz                    
+    20,790,611,767      instructions:u            #    1.56  insn per cycle         
+     3,468,701,138      branches:u                #  651.500 M/sec                  
+        14,270,204      branch-misses:u           #    0.41% of all branches        
+
+       5.375172456 seconds time elapsed
+
+       4.667090000 seconds user
+       0.657508000 seconds sys
+
+
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/mpi_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          5,325.26 msec task-clock:u              #    0.988 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           200,172      page-faults:u             #    0.038 M/sec                  
+    13,320,499,372      cycles:u                  #    2.501 GHz                    
+    20,797,339,842      instructions:u            #    1.56  insn per cycle         
+     3,470,463,258      branches:u                #  651.699 M/sec                  
+        14,593,100      branch-misses:u           #    0.42% of all branches        
+
+       5.391016608 seconds time elapsed
+
+       4.692281000 seconds user
+       0.633891000 seconds sys
+
+
+
+Pthread PartA (Optimized with -O2)
+Number of cores: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 704 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/pthread_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg 1':
+
+          3,593.59 msec task-clock:u              #    0.875 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           285,797      page-faults:u             #    0.080 M/sec                  
+     8,564,493,249      cycles:u                  #    2.383 GHz                    
+    21,237,342,412      instructions:u            #    2.48  insn per cycle         
+     1,427,940,149      branches:u                #  397.357 M/sec                  
+        69,873,814      branch-misses:u           #    4.89% of all branches        
+
+       4.109192036 seconds time elapsed
+
+       2.991018000 seconds user
+       0.609189000 seconds sys
+
+
+
+Number of cores: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 640 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/pthread_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg 2':
+
+          4,137.15 msec task-clock:u              #    1.021 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           272,192      page-faults:u             #    0.066 M/sec                  
+    10,105,782,141      cycles:u                  #    2.443 GHz                    
+    21,245,150,577      instructions:u            #    2.10  insn per cycle         
+     1,427,940,362      branches:u                #  345.151 M/sec                  
+        69,875,476      branch-misses:u           #    4.89% of all branches        
+
+       4.050990305 seconds time elapsed
+
+       3.458525000 seconds user
+       0.685518000 seconds sys
+
+
+
+Number of cores: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 339 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/pthread_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg 4':
+
+          4,183.62 msec task-clock:u              #    1.120 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           272,569      page-faults:u             #    0.065 M/sec                  
+    10,114,708,404      cycles:u                  #    2.418 GHz                    
+    21,237,276,420      instructions:u            #    2.10  insn per cycle         
+     1,427,928,230      branches:u                #  341.314 M/sec                  
+        69,723,446      branch-misses:u           #    4.88% of all branches        
+
+       3.736752796 seconds time elapsed
+
+       3.563151000 seconds user
+       0.627322000 seconds sys
+
+
+
+OpenMP PartA (Optimized with -O2)
+Number of cores: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 588 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/openmp_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          4,767.92 msec task-clock:u              #    1.013 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           489,866      page-faults:u             #    0.103 M/sec                  
+    10,701,049,154      cycles:u                  #    2.244 GHz                    
+    22,738,934,461      instructions:u            #    2.12  insn per cycle         
+     1,678,887,505      branches:u                #  352.122 M/sec                  
+        69,600,922      branch-misses:u           #    4.15% of all branches        
+
+       4.707719091 seconds time elapsed
+
+       3.724265000 seconds user
+       1.050101000 seconds sys
+
+
+
+Number of cores: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 589 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/openmp_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          4,780.32 msec task-clock:u              #    1.013 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           489,272      page-faults:u             #    0.102 M/sec                  
+    10,738,829,738      cycles:u                  #    2.246 GHz                    
+    22,738,933,917      instructions:u            #    2.12  insn per cycle         
+     1,678,886,976      branches:u                #  351.208 M/sec                  
+        69,530,752      branch-misses:u           #    4.14% of all branches        
+
+       4.718301142 seconds time elapsed
+
+       3.726846000 seconds user
+       1.050727000 seconds sys
+
+
+
+Number of cores: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 310 milliseconds
+
+ Performance counter stats for '/nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../build/src/cpu/openmp_PartA /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg':
+
+          4,841.96 msec task-clock:u              #    1.086 CPUs utilized          
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+           487,301      page-faults:u             #    0.101 M/sec                  
+    10,785,877,502      cycles:u                  #    2.228 GHz                    
+    22,745,069,796      instructions:u            #    2.11  insn per cycle         
+     1,680,694,288      branches:u                #  347.111 M/sec                  
+        69,571,313      branch-misses:u           #    4.14% of all branches        
+
+       4.457402569 seconds time elapsed
+
+       3.775703000 seconds user
+       1.073924000 seconds sys
+
+
+
+CUDA PartA
+Collecting data...
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+GPU Execution Time: 35.5067 milliseconds
+Processing events...
+Saving temporary "/tmp/nsys-report-1888-6616-1f66-8ba1.qdstrm" file to disk...
+
+Creating final output files...
+Processing [0%                                                                ]Processing [2%                                                                ]Processing [=5%                                                               ]Processing [========18%                                                       ]Processing [================29%                                               ]Processing [=====================37%                                          ]Processing [======================38%                                         ]Processing [==========================45%                                     ]Processing [================================54%                               ]Processing [===================================58%                            ]Processing [===================================59%                            ]Processing [====================================60%                           ]Processing [=====================================61%                          ]Processing [=====================================62%                          ]Processing [======================================63%                         ]Processing [=======================================64%                        ]Processing [=======================================65%                        ]Processing [========================================66%                       ]Processing [=========================================67%                      ]Processing [=========================================68%                      ]Processing [==========================================69%                     ]Processing [===========================================71%                    ]Processing [============================================72%                   ]Processing [================================================78%               ]Processing [=================================================79%              ]Processing [=================================================80%              ]Processing [==================================================81%             ]Processing [===================================================82%            ]Processing [===================================================83%            ]Processing [=====================================================85%          ]Processing [=====================================================86%          ]Processing [=======================================================88%        ]Processing [=======================================================89%        ]Processing [========================================================90%       ]Processing [=========================================================91%      ]Processing [==============================================================99% ]Processing [==============================================================100%]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-1888-6616-1f66-8ba1.qdrep"
+Unable to create output file /nfsmnt/121090741/CUHKSZ-CSC4005/project1/./profile/cuda_PartA.qdstrm : No such file or directory
+Please manually fetch report file(s) from:
+* /tmp/nsys-report-1888-6616-1f66-8ba1.qdrep
+
+Workload failed: No such file or directory
+srun: error: node04: task 0: Exited with exit code 255
+
+OpenACC PartA
+Collecting data...
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/20K-Gray.jpg
+Transformation Complete!
+Execution Time: 36 milliseconds
+Processing events...
+Saving temporary "/tmp/nsys-report-bf6b-296d-aa55-d6c6.qdstrm" file to disk...
+
+Creating final output files...
+Processing [0%                                                                ]Processing [2%                                                                ]Processing [4%                                                                ]Processing [========17%                                                       ]Processing [================29%                                               ]Processing [======================38%                                         ]Processing [======================39%                                         ]Processing [==========================45%                                     ]Processing [===============================52%                                ]Processing [=================================56%                              ]Processing [======================================63%                         ]Processing [=======================================64%                        ]Processing [=======================================65%                        ]Processing [========================================66%                       ]Processing [=========================================67%                      ]Processing [=========================================68%                      ]Processing [==========================================69%                     ]Processing [===========================================70%                    ]Processing [===========================================71%                    ]Processing [============================================72%                   ]Processing [=============================================74%                  ]Processing [==============================================75%                 ]Processing [=================================================80%              ]Processing [===================================================83%            ]Processing [====================================================84%           ]Processing [=====================================================85%          ]Processing [=====================================================86%          ]Processing [======================================================87%         ]Processing [=======================================================88%        ]Processing [=======================================================89%        ]Processing [========================================================90%       ]Processing [=============================================================97%  ]Processing [=============================================================98%  ]Processing [==============================================================100%]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-bf6b-296d-aa55-d6c6.qdrep"
+Unable to create output file /nfsmnt/121090741/CUHKSZ-CSC4005/project1/./profile/openacc_PartA.qdstrm : No such file or directory
+Please manually fetch report file(s) from:
+* /tmp/nsys-report-bf6b-296d-aa55-d6c6.qdrep
+
+Workload failed: No such file or directory
+srun: error: node04: task 0: Exited with exit code 255
+
+Triton PartA
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Gray.jpg
+Transformation Complete!
+Execution Time: 0.18 milliseconds
+
