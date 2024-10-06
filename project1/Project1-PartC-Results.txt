@@ -3,18 +3,18 @@ Sequential PartC Array-of-Structure (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 53588 milliseconds
+Execution Time: 3727 milliseconds
 
 Sequential PartC Structure-of-Array (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 37405 milliseconds
+Execution Time: 3642 milliseconds
 
 SIMD(AVX2) PartC (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Transformation Complete!
-Execution Time: 2218 milliseconds
+Execution Time: 2217 milliseconds
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Failed to write output JPEG
 srun: error: node05: task 0: Exited with exit code 255
@@ -34,43 +34,49 @@ srun: error: node05: tasks 0-3: Segmentation fault (core dumped)
 
 Number of processes: 8
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-srun: error: node05: tasks 0-1,3,7: Segmentation fault
-srun: error: node05: tasks 2,4-6: Segmentation fault (core dumped)
+srun: error: node05: tasks 0-1,3,5: Segmentation fault
+srun: error: node05: tasks 2,4,6-7: Segmentation fault (core dumped)
 
 Number of processes: 16
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-srun: error: node05: tasks 0-1,3,5-11,13,15: Segmentation fault
-srun: error: node05: tasks 2,4,12,14: Segmentation fault (core dumped)
+srun: error: node05: tasks 0-1,3,5,7-13,15: Segmentation fault
+srun: error: node05: tasks 2,4,6,14: Segmentation fault (core dumped)
 
 Number of processes: 32
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-srun: error: node05: tasks 0,2,16,20,24-26: Segmentation fault (core dumped)
-srun: error: node05: tasks 1,3-15,17-19,21-23,27-31: Segmentation fault
+srun: error: node05: tasks 0,2,4,24-25,29-30: Segmentation fault (core dumped)
+srun: error: node05: tasks 1,3,5-23,26-28,31: Segmentation fault
 
 Pthread PartC (Optimized with -O2)
 Number of cores: 1
-Failed to write output JPEG
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 1217 milliseconds
 
 Number of cores: 2
-Failed to write output JPEG
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 928 milliseconds
 
 Number of cores: 4
-Failed to write output JPEG
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 481 milliseconds
 
 Number of cores: 8
-Failed to write output JPEG
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 311 milliseconds
 
 Number of cores: 16
-Failed to write output JPEG
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 164 milliseconds
 
 Number of cores: 32
-Failed to write output JPEG
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 98 milliseconds
 
 OpenMP PartC (Optimized with -O2)
 Number of cores: 1

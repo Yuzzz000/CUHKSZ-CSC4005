@@ -1,87 +1,85 @@
+//
+// Created by Zhong Yebin on 2023/9/16.
+// Email: yebinzhong@link.cuhk.edu.cn
+//
+// Sequential implementation of converting a JPEG from RGB to gray
+// (Array-of-Structure)
+//
+
 #include <memory.h>
+
 #include <chrono>
 #include <cmath>
 #include <iostream>
 
 #include "../utils.hpp"
 
-// Function to apply bilateral filter for a specific pixel's color channel
-float bilateral_filter(unsigned char* buffer, int index, int width, int height, int num_channels, float sigma_s, float sigma_r) {
-    int filter_radius = 3;
-    float s_factor = -0.5 / (sigma_s * sigma_s);
-    float r_factor = -0.5 / (sigma_r * sigma_r);
-    float norm = 0.0f, sum = 0.0f;
-
-    int y = index / (width * num_channels);
-    int x = (index % (width * num_channels)) / num_channels;
-
-    for (int dy = -filter_radius; dy <= filter_radius; ++dy) {
-        int ny = y + dy;
-        if (ny >= 0 && ny < height) {
-            for (int dx = -filter_radius; dx <= filter_radius; ++dx) {
-                int nx = x + dx;
-                if (nx >= 0 && nx < width) {
-                    int current_index = (y * width + x) * num_channels + (index % num_channels);
-                    int neighbor_index = (ny * width + nx) * num_channels + (index % num_channels);
-                    float spatial = dx * dx + dy * dy;
-                    float range = buffer[current_index] - buffer[neighbor_index];
-                    float weight = exp(spatial * s_factor + range * range * r_factor);
-                    sum += buffer[neighbor_index] * weight;
-                    norm += weight;
-                }
-            }
-        }
-    }
-    return sum / norm;
-}
-
-
-
 int main(int argc, char** argv)
 {
-    if (argc != 3) {
-        std::cerr << "Invalid argument, should be: ./executable /path/to/input/jpeg /path/to/output/jpeg\n";
+    if (argc != 3)
+    {
+        std::cerr << "Invalid argument, should be: ./executable "
+                     "/path/to/input/jpeg /path/to/output/jpeg\n";
         return -1;
     }
-
+    // Read JPEG File
     const char* input_filename = argv[1];
     std::cout << "Input file from: " << input_filename << "\n";
-    auto input_jpeg = read_from_jpeg(input_filename);
-
-    unsigned char* filteredImage = new unsigned char[input_jpeg.width * input_jpeg.height * input_jpeg.num_channels];
-    memset(filteredImage, 0, input_jpeg.width * input_jpeg.height * input_jpeg.num_channels);
-
-    float sigma_s = 2.0f;  // Spatial standard deviation for the filter
-    float sigma_r = 50.0f; // Range standard deviation for the filter
-
+    JpegAOS input_jpeg = read_jpeg_aos(input_filename);
+    if (input_jpeg.pixels == nullptr)
+    {
+        std::cerr << "Failed to read input JPEG image\n";
+        return -1;
+    }
+    // Apply the filter to the image
+    int width = input_jpeg.width;
+    int height = input_jpeg.height;
+    int num_channels = input_jpeg.num_channels;
+    Pixel* output_pixels = new Pixel[width * height];
     auto start_time = std::chrono::high_resolution_clock::now();
-
-    for (int y = 1; y < input_jpeg.height - 1; y++) {
-        for (int x = 1; x < input_jpeg.width - 1; x++) {
-            for (int c = 0; c < input_jpeg.num_channels; c++) {
-                int index = (y * input_jpeg.width + x) * input_jpeg.num_channels + c;
-                float sum = bilateral_filter(input_jpeg.buffer, index, input_jpeg.width, input_jpeg.height, input_jpeg.num_channels, sigma_s, sigma_r);
-                filteredImage[index] = clamp_pixel_value(sum);
+    for (int channel = 0; channel < num_channels; ++channel)
+    {
+        for (int row = 1; row < height - 1; ++row)
+        {
+            for (int col = 1; col < width - 1; ++col)
+            {
+                int index = row * width + col;
+                ColorValue filtered_value = bilateral_filter(
+                    input_jpeg.pixels, row, col, width, channel);
+                output_pixels[index].set_channel(channel, filtered_value);
             }
         }
     }
-
+    // for (int row = 1; row < height - 1; ++row)
+    // {
+    //     for (int col = 1; col < width - 1; ++col)
+    //     {
+    //         int index = row * width + col;
+    //         for (int channel = 0; channel < num_channels; ++channel)
+    //         {
+    //             ColorValue filtered_value = bilateral_filter(
+    //                 input_jpeg.pixels, row, col, width, channel);
+    //             output_pixels[index].set_channel(channel, filtered_value);
+    //         }
+    //     }
+    // }
     auto end_time = std::chrono::high_resolution_clock::now();
-    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-
+    auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(
+        end_time - start_time);
+    // Save output JPEG image
     const char* output_filepath = argv[2];
     std::cout << "Output file to: " << output_filepath << "\n";
-    JPEGMeta output_jpeg{filteredImage, input_jpeg.width, input_jpeg.height, input_jpeg.num_channels, input_jpeg.color_space};
-    if (export_jpeg(output_jpeg, output_filepath)) {
+    JpegAOS output_jpeg{output_pixels, width, height, num_channels,
+                        input_jpeg.color_space};
+    if (export_jpeg(output_jpeg, output_filepath))
+    {
         std::cerr << "Failed to write output JPEG\n";
-        delete[] input_jpeg.buffer;
-        delete[] filteredImage;
         return -1;
     }
-
-    delete[] input_jpeg.buffer;
-    delete[] filteredImage;
+    // Cleanup
+    delete[] output_pixels;
     std::cout << "Transformation Complete!" << std::endl;
-    std::cout << "Execution Time: " << elapsed_time.count() << " milliseconds\n";
+    std::cout << "Execution Time: " << elapsed_time.count()
+              << " milliseconds\n";
     return 0;
 }
