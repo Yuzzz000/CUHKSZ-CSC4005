@@ -3,23 +3,122 @@ Sequential PartC Array-of-Structure (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3728 milliseconds
+Execution Time: 3723 milliseconds
 
 Sequential PartC Structure-of-Array (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3646 milliseconds
+Execution Time: 3639 milliseconds
 
 SIMD(AVX2) PartC (Optimized with -O2)
-Filtering completed in 2865 milliseconds.
+Filtering completed in 2863 milliseconds.
 
 MPI PartC (Optimized with -O2)
 Number of processes: 1
-Failed to write output JPEG to file
-srun: error: node05: task 0: Exited with exit code 255
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+srun: error: node04: task 0: Segmentation fault (core dumped)
 
 Number of processes: 2
-srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-slurmstepd: error: *** JOB 221780 ON node05 CANCELLED AT 2024-10-06T13:42:33 DUE TO TIME LIMIT ***
-slurmstepd: error: *** STEP 221780.4 ON node05 CANCELLED AT 2024-10-06T13:42:33 DUE TO TIME LIMIT ***
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+srun: error: node04: tasks 0-1: Segmentation fault (core dumped)
+
+Number of processes: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+srun: error: node04: tasks 0-3: Segmentation fault (core dumped)
+
+Number of processes: 8
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+srun: error: node04: tasks 0-1,3,5: Segmentation fault
+srun: error: node04: tasks 2,4,6-7: Segmentation fault (core dumped)
+
+Number of processes: 16
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+srun: error: node04: tasks 0-1,3-5,7,9,11-15: Segmentation fault
+srun: error: node04: tasks 2,6,8,10: Segmentation fault (core dumped)
+
+Number of processes: 32
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+srun: error: node04: tasks 0,12,18,24-26: Segmentation fault (core dumped)
+srun: error: node04: tasks 1-11,13-17,19-23,27-31: Segmentation fault
+
+Pthread PartC (Optimized with -O2)
+Number of cores: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 1218 milliseconds
+
+Number of cores: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 928 milliseconds
+
+Number of cores: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 478 milliseconds
+
+Number of cores: 8
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 289 milliseconds
+
+Number of cores: 16
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 164 milliseconds
+
+Number of cores: 32
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Transformation Complete!
+Execution Time: 96 milliseconds
+
+OpenMP PartC (Optimized with -O2)
+Number of cores: 1
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+Execution Time: 3663 milliseconds
+
+Number of cores: 2
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+Execution Time: 2791 milliseconds
+
+Number of cores: 4
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+Execution Time: 1418 milliseconds
+
+Number of cores: 8
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+Execution Time: 736 milliseconds
+
+Number of cores: 16
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+Execution Time: 385 milliseconds
+
+Number of cores: 32
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+Execution Time: 236 milliseconds
+
+CUDA PartC
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Filtering complete and image saved to /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+
+OpenACC PartC
+Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Failed to write output JPEG
+srun: error: node04: task 0: Exited with exit code 255
+
+Triton PartC
+
