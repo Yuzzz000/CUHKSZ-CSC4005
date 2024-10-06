@@ -2,7 +2,7 @@
 #include <cmath>
 #include <chrono>
 #include <cuda_runtime.h>
-#include "utils.hpp"  // Make sure this path is correct
+#include "utils.hpp"  // 确保路径正确
 
 #define FILTER_RADIUS 2
 #define SIGMA_S 10.0f
@@ -71,7 +71,8 @@ int main(int argc, char** argv) {
     const char* output_filename = argv[2];
     std::cout << "Input file from: " << input_filename << "\n";
 
-    JPEGMeta input_jpeg = read_from_jpeg(input_filename);
+    // 读取JPEG图像
+    auto input_jpeg = read_from_jpeg(input_filename);
     if (input_jpeg.buffer == nullptr) {
         std::cerr << "Failed to read input JPEG image\n";
         return -1;
@@ -82,41 +83,62 @@ int main(int argc, char** argv) {
     int num_channels = input_jpeg.num_channels;
     size_t buffer_size = width * height * num_channels;
 
+    unsigned char* filteredImage = new unsigned char[buffer_size];
+
+    // 分配GPU内存
     unsigned char* d_input_buffer;
     unsigned char* d_filtered_image;
+
     cudaMalloc((void**)&d_input_buffer, buffer_size);
     cudaMalloc((void**)&d_filtered_image, buffer_size);
 
+    cudaMemset(d_filtered_image, 0, buffer_size);
+
+    // 将数据从主机传输到设备
     cudaMemcpy(d_input_buffer, input_jpeg.buffer, buffer_size, cudaMemcpyHostToDevice);
 
+    // 设置CUDA网格和块大小
     dim3 blockDim(32, 32);
     dim3 gridDim((width + blockDim.x - 1) / blockDim.x,
                  (height + blockDim.y - 1) / blockDim.y);
 
-    apply_bilateral_filter_kernel<<<gridDim, blockDim>>>(d_input_buffer, d_filtered_image, width, height, num_channels, SIGMA_S, SIGMA_R);
+    // 记录CUDA事件
+    cudaEvent_t start, stop;
+    float gpuDuration;
+    cudaEventCreate(&start);
+    cudaEventCreate(&stop);
 
-    unsigned char* filteredImage = new unsigned char[buffer_size];
+    // 执行双边滤波
+    cudaEventRecord(start, 0); // GPU开始时间
+    apply_bilateral_filter_kernel<<<gridDim, blockDim>>>(d_input_buffer, d_filtered_image, width, height, num_channels, SIGMA_S, SIGMA_R);
+    cudaEventRecord(stop, 0); // GPU结束时间
+    cudaEventSynchronize(stop);
+
+    // 获取GPU计算时间
+    cudaEventElapsedTime(&gpuDuration, start, stop);
+
+    // 将数据从设备传输回主机
     cudaMemcpy(filteredImage, d_filtered_image, buffer_size, cudaMemcpyDeviceToHost);
 
-    // Wrapping filtered image data into JPEGMeta structure for export
-    JPEGMeta output_jpeg{
-        filteredImage,
-        width,
-        height,
-        num_channels,
-        input_jpeg.color_space
-    };
-
-    if (export_jpeg(output_jpeg, output_filename) != 0) {
+    // 保存JPEG输出图像
+    JPEGMeta output_jpeg{filteredImage, width, height, num_channels, input_jpeg.color_space};
+    if (export_jpeg(output_jpeg, output_filename)) {
         std::cerr << "Failed to write output JPEG\n";
         return -1;
     }
 
+    // 清理内存
     cudaFree(d_input_buffer);
     cudaFree(d_filtered_image);
     delete[] input_jpeg.buffer;
     delete[] filteredImage;
 
-    std::cout << "Filtering complete and image saved to " << output_filename << std::endl;
+    std::cout << "Transformation Complete!" << std::endl;
+    std::cout << "GPU Execution Time: " << gpuDuration << " milliseconds" << std::endl;
+
+    // 销毁CUDA事件
+    cudaEventDestroy(start);
+    cudaEventDestroy(stop);
+
     return 0;
 }

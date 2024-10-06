@@ -3,16 +3,16 @@ Sequential PartC Array-of-Structure (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3723 milliseconds
+Execution Time: 3724 milliseconds
 
 Sequential PartC Structure-of-Array (Optimized with -O2)
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3639 milliseconds
+Execution Time: 3640 milliseconds
 
 SIMD(AVX2) PartC (Optimized with -O2)
-Filtering completed in 2863 milliseconds.
+Filtering completed in 2861 milliseconds.
 
 MPI PartC (Optimized with -O2)
 Number of processes: 1
@@ -29,18 +29,18 @@ srun: error: node04: tasks 0-3: Segmentation fault (core dumped)
 
 Number of processes: 8
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-srun: error: node04: tasks 0-1,3,5: Segmentation fault
-srun: error: node04: tasks 2,4,6-7: Segmentation fault (core dumped)
+srun: error: node04: tasks 0-1,3-4: Segmentation fault
+srun: error: node04: tasks 2,5-7: Segmentation fault (core dumped)
 
 Number of processes: 16
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-srun: error: node04: tasks 0-1,3-5,7,9,11-15: Segmentation fault
-srun: error: node04: tasks 2,6,8,10: Segmentation fault (core dumped)
+srun: error: node04: tasks 0-1,3-6,8-12,14: Segmentation fault
+srun: error: node04: tasks 2,7,13,15: Segmentation fault (core dumped)
 
 Number of processes: 32
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-srun: error: node04: tasks 0,12,18,24-26: Segmentation fault (core dumped)
-srun: error: node04: tasks 1-11,13-17,19-23,27-31: Segmentation fault
+srun: error: node04: tasks 0,2,4,8,11,20,22: Segmentation fault (core dumped)
+srun: error: node04: tasks 1,3,5-7,9-10,12-19,21,23-31: Segmentation fault
 
 Pthread PartC (Optimized with -O2)
 Number of cores: 1
@@ -51,7 +51,7 @@ Execution Time: 1218 milliseconds
 Number of cores: 2
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Transformation Complete!
-Execution Time: 928 milliseconds
+Execution Time: 930 milliseconds
 
 Number of cores: 4
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
@@ -61,48 +61,48 @@ Execution Time: 478 milliseconds
 Number of cores: 8
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Transformation Complete!
-Execution Time: 289 milliseconds
+Execution Time: 375 milliseconds
 
 Number of cores: 16
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Transformation Complete!
-Execution Time: 164 milliseconds
+Execution Time: 178 milliseconds
 
 Number of cores: 32
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Transformation Complete!
-Execution Time: 96 milliseconds
+Execution Time: 98 milliseconds
 
 OpenMP PartC (Optimized with -O2)
 Number of cores: 1
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 3663 milliseconds
+Execution Time: 3653 milliseconds
 
 Number of cores: 2
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 2791 milliseconds
+Execution Time: 2793 milliseconds
 
 Number of cores: 4
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 1418 milliseconds
+Execution Time: 1421 milliseconds
 
 Number of cores: 8
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 736 milliseconds
+Execution Time: 740 milliseconds
 
 Number of cores: 16
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
 Transformation Complete!
-Execution Time: 385 milliseconds
+Execution Time: 403 milliseconds
 
 Number of cores: 32
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
@@ -112,7 +112,8 @@ Execution Time: 236 milliseconds
 
 CUDA PartC
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
-Filtering complete and image saved to /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-Bilateral.jpg
+Transformation Complete!
+GPU Execution Time: 26.8426 milliseconds
 
 OpenACC PartC
 Input file from: /nfsmnt/121090741/CUHKSZ-CSC4005/project1/src/scripts/../../images/4K-RGB.jpg
