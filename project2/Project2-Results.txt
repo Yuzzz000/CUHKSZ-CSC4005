@@ -1,0 +1,77 @@
+Naive Matrix Multiplication (Optimized with -O2)
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 8203 milliseconds
+
+Memory Locality Matrix Multiplication (Optimized with -O2)
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 6025 milliseconds
+
+SIMD + Memory Locality Matrix Multiplication (Optimized with -O2)
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+OpenMP + SIMD + Memory Locality Matrix Multiplication (Optimized with -O2)
+Number of cores: 1
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of cores: 2
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of cores: 4
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of cores: 8
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of cores: 16
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of cores: 32
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+MPI + OpenMP + SIMD + Memory Locality Matrix Multiplication (Optimized with -O2)
+Number of Processes: 1, Number of Threads: 32
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of Processes: 2, Number of Threads: 16
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of Processes: 4, Number of Threads: 8
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of Processes: 8, Number of Threads: 4
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of Processes: 16, Number of Threads: 2
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 2 milliseconds
+
+Number of Processes: 32, Number of Threads: 1
+Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
+Multiplication Complete!
+Execution Time: 3 milliseconds
+

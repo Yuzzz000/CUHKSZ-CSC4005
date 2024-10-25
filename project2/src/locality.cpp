@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <chrono>
 #include "matrix.hpp"
+#include <algorithm>
 
 Matrix matrix_multiply_locality(const Matrix& matrix1, const Matrix& matrix2) {
     if (matrix1.getCols() != matrix2.getRows()) {
@@ -25,6 +26,24 @@ Matrix matrix_multiply_locality(const Matrix& matrix1, const Matrix& matrix2) {
     // Hints:
     // 1. Change the order of the tripple nested loop
     // 2. Apply Tiled Matrix Multiplication
+
+    const size_t blockSize = 64; 
+
+    for (size_t i = 0; i < M; i += blockSize) {
+        for (size_t k = 0; k < K; k += blockSize) {
+            for (size_t j = 0; j < N; j += blockSize) {
+                for (size_t ii = i; ii < std::min(i + blockSize, M); ++ii) {
+                    for (size_t kk = k; kk < std::min(k + blockSize, K); ++kk) {
+                        for (size_t jj = j; jj < std::min(j + blockSize, N); ++jj) {
+                            result[ii][jj] += matrix1[ii][kk] * matrix2[kk][jj];
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
 
     return result;
 }
