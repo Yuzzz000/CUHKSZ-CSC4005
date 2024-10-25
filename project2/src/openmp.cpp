@@ -26,6 +26,27 @@ Matrix matrix_multiply_openmp(const Matrix& matrix1, const Matrix& matrix2) {
     // In addition to SIMD, Memory Locality and Cache Missing,
     // Further Applying OpenMp
 
+    const size_t blockSize = 64;
+
+    #pragma omp parallel for collapse(2) schedule(static)
+    for (size_t i = 0; i < M; i += blockSize) {
+        for (size_t k = 0; k < K; k += blockSize) {
+            for (size_t j = 0; j < N; j += blockSize) {
+                for (size_t ii = i; ii < std::min(i + blockSize, M); ii++) {
+                    for (size_t kk = k; kk < std::min(k + blockSize, K); ++kk) {
+                        __m256i a_vec = _mm256_set1_epi32(matrix1[ii][kk]);
+                        for (size_t jj = j; jj < std::min(j + blockSize, N); jj += 8) {
+                            __m256i b_vec = _mm256_loadu_si256((__m256i*)&matrix2[kk][jj]);
+                            __m256i r_vec = _mm256_loadu_si256((__m256i*)&result[ii][jj]);
+                            __m256i res_vec = _mm256_add_epi32(_mm256_mullo_epi32(a_vec, b_vec), r_vec);
+                            _mm256_storeu_si256((__m256i*)&result[ii][jj], res_vec);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     return result;
 }
 
