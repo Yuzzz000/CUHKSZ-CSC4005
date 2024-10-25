@@ -1,0 +1,227 @@
+
+
+# started on Fri Oct 25 01:57:58 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 1 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/naive /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,712,725      cpu-cycles:u                                                
+            48,470      cache-misses:u                                              
+             1,598      page-faults:u                                               
+
+       8.643464652 seconds time elapsed
+
+       0.014456000 seconds user
+       0.015488000 seconds sys
+
+
+# started on Fri Oct 25 01:58:07 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 1 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/locality /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,937,850      cpu-cycles:u                                                
+            56,572      cache-misses:u                                              
+             1,598      page-faults:u                                               
+
+       6.449984370 seconds time elapsed
+
+       0.010937000 seconds user
+       0.018892000 seconds sys
+
+
+# started on Fri Oct 25 01:58:15 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 1 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/simd /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        14,130,269      cpu-cycles:u                                                
+            50,739      cache-misses:u                                              
+             1,596      page-faults:u                                               
+
+       1.410397514 seconds time elapsed
+
+       0.016063000 seconds user
+       0.013921000 seconds sys
+
+
+# started on Fri Oct 25 01:58:18 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 1 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/openmp 1 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,730,159      cpu-cycles:u                                                
+            50,879      cache-misses:u                                              
+             1,597      page-faults:u                                               
+
+       1.413644113 seconds time elapsed
+
+       0.013769000 seconds user
+       0.015736000 seconds sys
+
+
+# started on Fri Oct 25 01:58:20 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/openmp 2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,778,985      cpu-cycles:u                                                
+            41,595      cache-misses:u                                              
+             1,598      page-faults:u                                               
+
+       1.281148482 seconds time elapsed
+
+       0.014009000 seconds user
+       0.016011000 seconds sys
+
+
+# started on Fri Oct 25 01:58:23 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 4 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/openmp 4 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,812,227      cpu-cycles:u                                                
+            49,156      cache-misses:u                                              
+             1,598      page-faults:u                                               
+
+       0.871980670 seconds time elapsed
+
+       0.012467000 seconds user
+       0.017662000 seconds sys
+
+
+# started on Fri Oct 25 01:58:25 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 8 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/openmp 8 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,797,700      cpu-cycles:u                                                
+            45,809      cache-misses:u                                              
+             1,599      page-faults:u                                               
+
+       0.768021689 seconds time elapsed
+
+       0.017437000 seconds user
+       0.009808000 seconds sys
+
+
+# started on Fri Oct 25 01:58:27 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 16 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/openmp 16 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,916,021      cpu-cycles:u                                                
+            48,634      cache-misses:u                                              
+             1,599      page-faults:u                                               
+
+       0.632253168 seconds time elapsed
+
+       0.017183000 seconds user
+       0.013140000 seconds sys
+
+
+# started on Fri Oct 25 01:58:29 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 32 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/openmp 32 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        13,752,762      cpu-cycles:u                                                
+            40,627      cache-misses:u                                              
+             1,599      page-faults:u                                               
+
+       0.535155751 seconds time elapsed
+
+       0.011448000 seconds user
+       0.017693000 seconds sys
+
+
+# started on Fri Oct 25 01:58:30 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 32 --mpi=pmi2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi 32 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        14,875,863      cpu-cycles:u                                                
+            55,153      cache-misses:u                                              
+             1,623      page-faults:u                                               
+
+       0.556220948 seconds time elapsed
+
+       0.016879000 seconds user
+       0.015824000 seconds sys
+
+
+# started on Fri Oct 25 01:58:32 2024
+
+
+ Performance counter stats for 'srun -n 2 --cpus-per-task 16 --mpi=pmi2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi 16 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        15,427,579      cpu-cycles:u                                                
+            57,057      cache-misses:u                                              
+             1,628      page-faults:u                                               
+
+       0.725535822 seconds time elapsed
+
+       0.009838000 seconds user
+       0.018583000 seconds sys
+
+
+# started on Fri Oct 25 01:58:34 2024
+
+
+ Performance counter stats for 'srun -n 4 --cpus-per-task 8 --mpi=pmi2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi 8 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        15,168,607      cpu-cycles:u                                                
+            54,084      cache-misses:u                                              
+             1,630      page-faults:u                                               
+
+       0.573176404 seconds time elapsed
+
+       0.014295000 seconds user
+       0.021992000 seconds sys
+
+
+# started on Fri Oct 25 01:58:36 2024
+
+
+ Performance counter stats for 'srun -n 8 --cpus-per-task 4 --mpi=pmi2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi 4 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        15,249,068      cpu-cycles:u                                                
+            51,502      cache-misses:u                                              
+             1,630      page-faults:u                                               
+
+       0.566021792 seconds time elapsed
+
+       0.015409000 seconds user
+       0.018298000 seconds sys
+
+
+# started on Fri Oct 25 01:58:38 2024
+
+
+ Performance counter stats for 'srun -n 16 --cpus-per-task 2 --mpi=pmi2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi 2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        15,408,703      cpu-cycles:u                                                
+            60,020      cache-misses:u                                              
+             1,630      page-faults:u                                               
+
+       0.557837876 seconds time elapsed
+
+       0.015658000 seconds user
+       0.018790000 seconds sys
+
+
+# started on Fri Oct 25 01:58:39 2024
+
+
+ Performance counter stats for 'srun -n 32 --cpus-per-task 1 --mpi=pmi2 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi 1 /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix5.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../matrices/matrix6.txt /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt':
+
+        16,226,977      cpu-cycles:u                                                
+            68,402      cache-misses:u                                              
+             1,631      page-faults:u                                               
+
+       0.798727695 seconds time elapsed
+
+       0.016009000 seconds user
+       0.019010000 seconds sys
+
+

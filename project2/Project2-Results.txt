@@ -1,77 +1,523 @@
 Naive Matrix Multiplication (Optimized with -O2)
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 8203 milliseconds
+Execution Time: 8204 milliseconds
 
 Memory Locality Matrix Multiplication (Optimized with -O2)
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 6025 milliseconds
+Execution Time: 6036 milliseconds
 
 SIMD + Memory Locality Matrix Multiplication (Optimized with -O2)
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 997 milliseconds
 
 OpenMP + SIMD + Memory Locality Matrix Multiplication (Optimized with -O2)
 Number of cores: 1
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 1011 milliseconds
 
 Number of cores: 2
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 871 milliseconds
 
 Number of cores: 4
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 461 milliseconds
 
 Number of cores: 8
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 315 milliseconds
 
 Number of cores: 16
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 185 milliseconds
 
 Number of cores: 32
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
 Multiplication Complete!
-Execution Time: 2 milliseconds
+Execution Time: 100 milliseconds
 
 MPI + OpenMP + SIMD + Memory Locality Matrix Multiplication (Optimized with -O2)
 Number of Processes: 1, Number of Threads: 32
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
-Multiplication Complete!
-Execution Time: 2 milliseconds
+Multiplication Complete! Execution Time: 92 milliseconds
 
 Number of Processes: 2, Number of Threads: 16
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
-Multiplication Complete!
-Execution Time: 2 milliseconds
+Multiplication Complete! Execution Time: 94 milliseconds
+*** Error in `/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi': double free or corruption (out): 0x00000000015de010 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81499)[0x7fbbc0505499]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x4038f6]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x403098]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fbbc04a6445]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x40322f]
+======= Memory map: ========
+00400000-0040d000 r-xp 00000000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060c000-0060d000 r--p 0000c000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060d000-0060e000 rw-p 0000d000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+00ba1000-019f1000 rw-p 00000000 00:00 0                                  [heap]
+7fbbb0000000-7fbbb0021000 rw-p 00000000 00:00 0 
+7fbbb0021000-7fbbb4000000 ---p 00000000 00:00 0 
+7fbbb783a000-7fbbb783b000 ---p 00000000 00:00 0 
+7fbbb783b000-7fbbb803b000 rw-p 00000000 00:00 0 
+7fbbb803b000-7fbbb803c000 ---p 00000000 00:00 0 
+7fbbb803c000-7fbbb883c000 rw-p 00000000 00:00 0 
+7fbbb883c000-7fbbb883d000 ---p 00000000 00:00 0 
+7fbbb883d000-7fbbb903d000 rw-p 00000000 00:00 0 
+7fbbb903d000-7fbbb903e000 ---p 00000000 00:00 0 
+7fbbb903e000-7fbbb983e000 rw-p 00000000 00:00 0 
+7fbbb983e000-7fbbb983f000 ---p 00000000 00:00 0 
+7fbbb983f000-7fbbba03f000 rw-p 00000000 00:00 0 
+7fbbba03f000-7fbbba040000 ---p 00000000 00:00 0 
+7fbbba040000-7fbbba840000 rw-p 00000000 00:00 0 
+7fbbba840000-7fbbba841000 ---p 00000000 00:00 0 
+7fbbba841000-7fbbbb041000 rw-p 00000000 00:00 0 
+7fbbbb041000-7fbbbb042000 ---p 00000000 00:00 0 
+7fbbbb042000-7fbbbb842000 rw-p 00000000 00:00 0 
+7fbbbb842000-7fbbbb843000 ---p 00000000 00:00 0 
+7fbbbb843000-7fbbbc043000 rw-p 00000000 00:00 0 
+7fbbbc043000-7fbbbc044000 ---p 00000000 00:00 0 
+7fbbbc044000-7fbbbc844000 rw-p 00000000 00:00 0 
+7fbbbc844000-7fbbbc845000 ---p 00000000 00:00 0 
+7fbbbc845000-7fbbbd045000 rw-p 00000000 00:00 0 
+7fbbbd045000-7fbbbd046000 ---p 00000000 00:00 0 
+7fbbbd046000-7fbbbd846000 rw-p 00000000 00:00 0 
+7fbbbd846000-7fbbbd847000 ---p 00000000 00:00 0 
+7fbbbd847000-7fbbbe047000 rw-p 00000000 00:00 0 
+7fbbbe047000-7fbbbe048000 ---p 00000000 00:00 0 
+7fbbbe048000-7fbbbe848000 rw-p 00000000 00:00 0 
+7fbbbe848000-7fbbbe849000 ---p 00000000 00:00 0 
+7fbbbe849000-7fbbbf049000 rw-p 00000000 00:00 0 
+7fbbbf2ea000-7fbbbf2f6000 r-xp 00000000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fbbbf2f6000-7fbbbf4f5000 ---p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fbbbf4f5000-7fbbbf4f6000 r--p 0000b000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fbbbf4f6000-7fbbbf4f7000 rw-p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fbbbf4f7000-7fbbbf4fd000 rw-p 00000000 00:00 0 
+7fbbbfd1e000-7fbbbfd59000 r-xp 00000000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fbbbfd59000-7fbbbff58000 ---p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fbbbff58000-7fbbbff59000 r--p 0003a000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fbbbff59000-7fbbbff5a000 rw-p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fbbbff5a000-7fbbc0079000 r-xp 00000000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fbbc0079000-7fbbc0279000 ---p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fbbc0279000-7fbbc027a000 r--p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fbbc027a000-7fbbc027c000 rw-p 00120000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fbbc027c000-7fbbc0283000 r-xp 00000000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fbbc0283000-7fbbc0482000 ---p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fbbc0482000-7fbbc0483000 r--p 00006000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fbbc0483000-7fbbc0484000 rw-p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fbbc0484000-7fbbc0647000 r-xp 00000000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fbbc0647000-7fbbc0846000 ---p 001c3000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fbbc0846000-7fbbc084a000 r--p 001c2000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fbbc084a000-7fbbc084c000 rw-p 001c6000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fbbc084c000-7fbbc0851000 rw-p 00000000 00:00 0 
+7fbbc0851000-7fbbc0866000 r-xp 00000000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fbbc0866000-7fbbc0a65000 ---p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fbbc0a65000-7fbbc0a66000 r--p 00014000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fbbc0a66000-7fbbc0a67000 rw-p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fbbc0a67000-7fbbc0b68000 r-xp 00000000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fbbc0b68000-7fbbc0d67000 ---p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fbbc0d67000-7fbbc0d68000 r--p 00100000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fbbc0d68000-7fbbc0d69000 rw-p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fbbc0d69000-7fbbc0e52000 r-xp 00000000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fbbc0e52000-7fbbc1052000 ---p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fbbc1052000-7fbbc105a000 r--p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fbbc105a000-7fbbc105c000 rw-p 000f1000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fbbc105c000-7fbbc1071000 rw-p 00000000 00:00 0 
+7fbbc1071000-7fbbc1088000 r-xp 00000000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fbbc1088000-7fbbc1287000 ---p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fbbc1287000-7fbbc1288000 r--p 00016000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fbbc1288000-7fbbc1289000 rw-p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fbbc1289000-7fbbc128d000 rw-p 00000000 00:00 0 
+7fbbc128d000-7fbbc12b2000 r-xp 00000000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fbbc12b2000-7fbbc14b1000 ---p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fbbc14b1000-7fbbc14b2000 r--p 00024000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fbbc14b2000-7fbbc14b3000 rw-p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fbbc14b3000-7fbbc16ed000 r-xp 00000000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fbbc16ed000-7fbbc18ec000 ---p 0023a000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fbbc18ec000-7fbbc18fa000 r--p 00239000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fbbc18fa000-7fbbc18fe000 rw-p 00247000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fbbc18fe000-7fbbc1938000 rw-p 00000000 00:00 0 
+7fbbc1938000-7fbbc1958000 r-xp 00000000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fbbc1958000-7fbbc1b57000 ---p 00020000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fbbc1b57000-7fbbc1b59000 r--p 0001f000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fbbc1b59000-7fbbc1b5a000 rw-p 00021000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fbbc1b5a000-7fbbc1b7c000 r-xp 00000000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fbbc1bdc000-7fbbc1c1d000 rw-s 00000000 00:13 628737894                  /dev/shm/mpich_shar_tmpM6UE2D (deleted)
+7fbbc1d5e000-7fbbc1d67000 rw-p 00000000 00:00 0 
+7fbbc1d76000-7fbbc1d79000 rw-p 00000000 00:00 0 
+7fbbc1d79000-7fbbc1d7b000 r-xp 00000000 00:00 0                          [vdso]
+7fbbc1d7b000-7fbbc1d7c000 r--p 00021000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fbbc1d7c000-7fbbc1d7d000 rw-p 00022000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fbbc1d7d000-7fbbc1d7e000 rw-p 00000000 00:00 0 
+7fffe2fd6000-7fffe2ff8000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+srun: error: node05: task 0: Aborted (core dumped)
 
 Number of Processes: 4, Number of Threads: 8
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
-Multiplication Complete!
-Execution Time: 2 milliseconds
+Multiplication Complete! Execution Time: 93 milliseconds
+*** Error in `/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi': double free or corruption (out): 0x0000000002b8b340 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81499)[0x7f56594b6499]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x4038f6]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x403098]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f5659457445]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x40322f]
+======= Memory map: ========
+00400000-0040d000 r-xp 00000000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060c000-0060d000 r--p 0000c000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060d000-0060e000 rw-p 0000d000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+02253000-02f9b000 rw-p 00000000 00:00 0                                  [heap]
+7f564c000000-7f564c021000 rw-p 00000000 00:00 0 
+7f564c021000-7f5650000000 ---p 00000000 00:00 0 
+7f5653f53000-7f5653f54000 ---p 00000000 00:00 0 
+7f5653f54000-7f5654754000 rw-p 00000000 00:00 0 
+7f5654754000-7f5654755000 ---p 00000000 00:00 0 
+7f5654755000-7f5654f55000 rw-p 00000000 00:00 0 
+7f5654f55000-7f5654f56000 ---p 00000000 00:00 0 
+7f5654f56000-7f5655756000 rw-p 00000000 00:00 0 
+7f5655756000-7f5655757000 ---p 00000000 00:00 0 
+7f5655757000-7f5655f57000 rw-p 00000000 00:00 0 
+7f5655f57000-7f5655f58000 ---p 00000000 00:00 0 
+7f5655f58000-7f5656758000 rw-p 00000000 00:00 0 
+7f5656758000-7f5656759000 ---p 00000000 00:00 0 
+7f5656759000-7f5656f59000 rw-p 00000000 00:00 0 
+7f5656f59000-7f5656f5a000 ---p 00000000 00:00 0 
+7f5656f5a000-7f565775a000 rw-p 00000000 00:00 0 
+7f56579fb000-7f5657a07000 r-xp 00000000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f5657a07000-7f5657c06000 ---p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f5657c06000-7f5657c07000 r--p 0000b000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f5657c07000-7f5657c08000 rw-p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f5657c08000-7f5657c0e000 rw-p 00000000 00:00 0 
+7f5658ccf000-7f5658d0a000 r-xp 00000000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f5658d0a000-7f5658f09000 ---p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f5658f09000-7f5658f0a000 r--p 0003a000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f5658f0a000-7f5658f0b000 rw-p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f5658f0b000-7f565902a000 r-xp 00000000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f565902a000-7f565922a000 ---p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f565922a000-7f565922b000 r--p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f565922b000-7f565922d000 rw-p 00120000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f565922d000-7f5659234000 r-xp 00000000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f5659234000-7f5659433000 ---p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f5659433000-7f5659434000 r--p 00006000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f5659434000-7f5659435000 rw-p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f5659435000-7f56595f8000 r-xp 00000000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f56595f8000-7f56597f7000 ---p 001c3000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f56597f7000-7f56597fb000 r--p 001c2000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f56597fb000-7f56597fd000 rw-p 001c6000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f56597fd000-7f5659802000 rw-p 00000000 00:00 0 
+7f5659802000-7f5659817000 r-xp 00000000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5659817000-7f5659a16000 ---p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5659a16000-7f5659a17000 r--p 00014000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5659a17000-7f5659a18000 rw-p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5659a18000-7f5659b19000 r-xp 00000000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f5659b19000-7f5659d18000 ---p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f5659d18000-7f5659d19000 r--p 00100000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f5659d19000-7f5659d1a000 rw-p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f5659d1a000-7f5659e03000 r-xp 00000000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f5659e03000-7f565a003000 ---p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f565a003000-7f565a00b000 r--p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f565a00b000-7f565a00d000 rw-p 000f1000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f565a00d000-7f565a022000 rw-p 00000000 00:00 0 
+7f565a022000-7f565a039000 r-xp 00000000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f565a039000-7f565a238000 ---p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f565a238000-7f565a239000 r--p 00016000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f565a239000-7f565a23a000 rw-p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f565a23a000-7f565a23e000 rw-p 00000000 00:00 0 
+7f565a23e000-7f565a263000 r-xp 00000000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f565a263000-7f565a462000 ---p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f565a462000-7f565a463000 r--p 00024000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f565a463000-7f565a464000 rw-p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f565a464000-7f565a69e000 r-xp 00000000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f565a69e000-7f565a89d000 ---p 0023a000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f565a89d000-7f565a8ab000 r--p 00239000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f565a8ab000-7f565a8af000 rw-p 00247000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f565a8af000-7f565a8e9000 rw-p 00000000 00:00 0 
+7f565a8e9000-7f565a909000 r-xp 00000000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f565a909000-7f565ab08000 ---p 00020000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f565ab08000-7f565ab0a000 r--p 0001f000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f565ab0a000-7f565ab0b000 rw-p 00021000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f565ab0b000-7f565ab2d000 r-xp 00000000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7f565ab4e000-7f565ab8f000 rw-s 00000000 00:13 628759660                  /dev/shm/mpich_shar_tmpOQRQ1z (deleted)
+7f565ab8f000-7f565abd0000 rw-s 00000000 00:13 628759659                  /dev/shm/mpich_shar_tmpgOMHcF (deleted)
+7f565ad11000-7f565ad1a000 rw-p 00000000 00:00 0 
+7f565ad29000-7f565ad2c000 rw-p 00000000 00:00 0 
+7f565ad2c000-7f565ad2d000 r--p 00021000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7f565ad2d000-7f565ad2e000 rw-p 00022000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7f565ad2e000-7f565ad2f000 rw-p 00000000 00:00 0 
+7fff66402000-7fff66424000 rw-p 00000000 00:00 0                          [stack]
+7fff664f7000-7fff664f9000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+srun: error: node05: task 0: Aborted (core dumped)
 
 Number of Processes: 8, Number of Threads: 4
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
-Multiplication Complete!
-Execution Time: 2 milliseconds
+Multiplication Complete! Execution Time: 71 milliseconds
+*** Error in `/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi': double free or corruption (out): 0x0000000000ed9020 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81499)[0x7fdf5ee23499]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x4038f6]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x403098]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fdf5edc4445]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x40322f]
+======= Memory map: ========
+00400000-0040d000 r-xp 00000000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060c000-0060d000 r--p 0000c000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060d000-0060e000 rw-p 0000d000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+00622000-012e7000 rw-p 00000000 00:00 0                                  [heap]
+7fdf54000000-7fdf54021000 rw-p 00000000 00:00 0 
+7fdf54021000-7fdf58000000 ---p 00000000 00:00 0 
+7fdf5a5c2000-7fdf5a603000 rw-s 00000000 00:13 628743949                  /dev/shm/mpich_shar_tmpE7x4Kz (deleted)
+7fdf5a603000-7fdf5a604000 ---p 00000000 00:00 0 
+7fdf5a604000-7fdf5ae04000 rw-p 00000000 00:00 0 
+7fdf5ae04000-7fdf5ae05000 ---p 00000000 00:00 0 
+7fdf5ae05000-7fdf5b605000 rw-p 00000000 00:00 0 
+7fdf5b605000-7fdf5b606000 ---p 00000000 00:00 0 
+7fdf5b606000-7fdf5be06000 rw-p 00000000 00:00 0 
+7fdf5c0a7000-7fdf5c0b3000 r-xp 00000000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fdf5c0b3000-7fdf5c2b2000 ---p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fdf5c2b2000-7fdf5c2b3000 r--p 0000b000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fdf5c2b3000-7fdf5c2b4000 rw-p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fdf5c2b4000-7fdf5c2ba000 rw-p 00000000 00:00 0 
+7fdf5e63c000-7fdf5e677000 r-xp 00000000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fdf5e677000-7fdf5e876000 ---p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fdf5e876000-7fdf5e877000 r--p 0003a000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fdf5e877000-7fdf5e878000 rw-p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fdf5e878000-7fdf5e997000 r-xp 00000000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fdf5e997000-7fdf5eb97000 ---p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fdf5eb97000-7fdf5eb98000 r--p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fdf5eb98000-7fdf5eb9a000 rw-p 00120000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fdf5eb9a000-7fdf5eba1000 r-xp 00000000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fdf5eba1000-7fdf5eda0000 ---p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fdf5eda0000-7fdf5eda1000 r--p 00006000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fdf5eda1000-7fdf5eda2000 rw-p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fdf5eda2000-7fdf5ef65000 r-xp 00000000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fdf5ef65000-7fdf5f164000 ---p 001c3000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fdf5f164000-7fdf5f168000 r--p 001c2000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fdf5f168000-7fdf5f16a000 rw-p 001c6000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fdf5f16a000-7fdf5f16f000 rw-p 00000000 00:00 0 
+7fdf5f16f000-7fdf5f184000 r-xp 00000000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fdf5f184000-7fdf5f383000 ---p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fdf5f383000-7fdf5f384000 r--p 00014000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fdf5f384000-7fdf5f385000 rw-p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fdf5f385000-7fdf5f486000 r-xp 00000000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fdf5f486000-7fdf5f685000 ---p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fdf5f685000-7fdf5f686000 r--p 00100000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fdf5f686000-7fdf5f687000 rw-p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fdf5f687000-7fdf5f770000 r-xp 00000000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fdf5f770000-7fdf5f970000 ---p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fdf5f970000-7fdf5f978000 r--p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fdf5f978000-7fdf5f97a000 rw-p 000f1000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fdf5f97a000-7fdf5f98f000 rw-p 00000000 00:00 0 
+7fdf5f98f000-7fdf5f9a6000 r-xp 00000000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fdf5f9a6000-7fdf5fba5000 ---p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fdf5fba5000-7fdf5fba6000 r--p 00016000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fdf5fba6000-7fdf5fba7000 rw-p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fdf5fba7000-7fdf5fbab000 rw-p 00000000 00:00 0 
+7fdf5fbab000-7fdf5fbd0000 r-xp 00000000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fdf5fbd0000-7fdf5fdcf000 ---p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fdf5fdcf000-7fdf5fdd0000 r--p 00024000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fdf5fdd0000-7fdf5fdd1000 rw-p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fdf5fdd1000-7fdf6000b000 r-xp 00000000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fdf6000b000-7fdf6020a000 ---p 0023a000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fdf6020a000-7fdf60218000 r--p 00239000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fdf60218000-7fdf6021c000 rw-p 00247000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fdf6021c000-7fdf60256000 rw-p 00000000 00:00 0 
+7fdf60256000-7fdf60276000 r-xp 00000000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fdf60276000-7fdf60475000 ---p 00020000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fdf60475000-7fdf60477000 r--p 0001f000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fdf60477000-7fdf60478000 rw-p 00021000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fdf60478000-7fdf6049a000 r-xp 00000000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fdf604bb000-7fdf604fc000 rw-s 00000000 00:13 628743948                  /dev/shm/mpich_shar_tmpAggxhA (deleted)
+7fdf604fc000-7fdf6053d000 rw-s 00000000 00:13 628743947                  /dev/shm/mpich_shar_tmp0SbfOA (deleted)
+7fdf6067e000-7fdf60687000 rw-p 00000000 00:00 0 
+7fdf60696000-7fdf60699000 rw-p 00000000 00:00 0 
+7fdf60699000-7fdf6069a000 r--p 00021000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fdf6069a000-7fdf6069b000 rw-p 00022000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fdf6069b000-7fdf6069c000 rw-p 00000000 00:00 0 
+7ffd6d4e5000-7ffd6d507000 rw-p 00000000 00:00 0                          [stack]
+7ffd6d539000-7ffd6d53b000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+srun: error: node05: task 0: Aborted (core dumped)
 
 Number of Processes: 16, Number of Threads: 2
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
-Multiplication Complete!
-Execution Time: 2 milliseconds
+Multiplication Complete! Execution Time: 62 milliseconds
+*** Error in `/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi': double free or corruption (out): 0x0000000001b13aa0 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81499)[0x7fd8c2acd499]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x4038f6]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x403098]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd8c2a6e445]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x40322f]
+======= Memory map: ========
+00400000-0040d000 r-xp 00000000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060c000-0060d000 r--p 0000c000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060d000-0060e000 rw-p 0000d000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0129d000-01f1f000 rw-p 00000000 00:00 0                                  [heap]
+7fd8b8000000-7fd8b8021000 rw-p 00000000 00:00 0 
+7fd8b8021000-7fd8bc000000 ---p 00000000 00:00 0 
+7fd8bc6a9000-7fd8bc6ea000 rw-s 00000000 00:13 628759679                  /dev/shm/mpich_shar_tmpYlJrXF (deleted)
+7fd8bc6ea000-7fd8bc72b000 rw-s 00000000 00:13 628759678                  /dev/shm/mpich_shar_tmpSTUUWB (deleted)
+7fd8bc72b000-7fd8bc72c000 ---p 00000000 00:00 0 
+7fd8bc72c000-7fd8bcf2c000 rw-p 00000000 00:00 0 
+7fd8bd1cd000-7fd8bd1d9000 r-xp 00000000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fd8bd1d9000-7fd8bd3d8000 ---p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fd8bd3d8000-7fd8bd3d9000 r--p 0000b000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fd8bd3d9000-7fd8bd3da000 rw-p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7fd8bd3da000-7fd8bd3e0000 rw-p 00000000 00:00 0 
+7fd8c22e6000-7fd8c2321000 r-xp 00000000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fd8c2321000-7fd8c2520000 ---p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fd8c2520000-7fd8c2521000 r--p 0003a000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fd8c2521000-7fd8c2522000 rw-p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7fd8c2522000-7fd8c2641000 r-xp 00000000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fd8c2641000-7fd8c2841000 ---p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fd8c2841000-7fd8c2842000 r--p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fd8c2842000-7fd8c2844000 rw-p 00120000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7fd8c2844000-7fd8c284b000 r-xp 00000000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fd8c284b000-7fd8c2a4a000 ---p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fd8c2a4a000-7fd8c2a4b000 r--p 00006000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fd8c2a4b000-7fd8c2a4c000 rw-p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7fd8c2a4c000-7fd8c2c0f000 r-xp 00000000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fd8c2c0f000-7fd8c2e0e000 ---p 001c3000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fd8c2e0e000-7fd8c2e12000 r--p 001c2000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fd8c2e12000-7fd8c2e14000 rw-p 001c6000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7fd8c2e14000-7fd8c2e19000 rw-p 00000000 00:00 0 
+7fd8c2e19000-7fd8c2e2e000 r-xp 00000000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd8c2e2e000-7fd8c302d000 ---p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd8c302d000-7fd8c302e000 r--p 00014000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd8c302e000-7fd8c302f000 rw-p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fd8c302f000-7fd8c3130000 r-xp 00000000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fd8c3130000-7fd8c332f000 ---p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fd8c332f000-7fd8c3330000 r--p 00100000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fd8c3330000-7fd8c3331000 rw-p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7fd8c3331000-7fd8c341a000 r-xp 00000000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fd8c341a000-7fd8c361a000 ---p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fd8c361a000-7fd8c3622000 r--p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fd8c3622000-7fd8c3624000 rw-p 000f1000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7fd8c3624000-7fd8c3639000 rw-p 00000000 00:00 0 
+7fd8c3639000-7fd8c3650000 r-xp 00000000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fd8c3650000-7fd8c384f000 ---p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fd8c384f000-7fd8c3850000 r--p 00016000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fd8c3850000-7fd8c3851000 rw-p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7fd8c3851000-7fd8c3855000 rw-p 00000000 00:00 0 
+7fd8c3855000-7fd8c387a000 r-xp 00000000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fd8c387a000-7fd8c3a79000 ---p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fd8c3a79000-7fd8c3a7a000 r--p 00024000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fd8c3a7a000-7fd8c3a7b000 rw-p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7fd8c3a7b000-7fd8c3cb5000 r-xp 00000000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fd8c3cb5000-7fd8c3eb4000 ---p 0023a000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fd8c3eb4000-7fd8c3ec2000 r--p 00239000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fd8c3ec2000-7fd8c3ec6000 rw-p 00247000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7fd8c3ec6000-7fd8c3f00000 rw-p 00000000 00:00 0 
+7fd8c3f00000-7fd8c3f20000 r-xp 00000000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fd8c3f20000-7fd8c411f000 ---p 00020000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fd8c411f000-7fd8c4121000 r--p 0001f000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fd8c4121000-7fd8c4122000 rw-p 00021000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7fd8c4122000-7fd8c4144000 r-xp 00000000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fd8c4165000-7fd8c41a6000 rw-s 00000000 00:13 628759677                  /dev/shm/mpich_shar_tmpwW8PXx (deleted)
+7fd8c41a6000-7fd8c41e7000 rw-s 00000000 00:13 628759676                  /dev/shm/mpich_shar_tmpcjSPYt (deleted)
+7fd8c4328000-7fd8c4331000 rw-p 00000000 00:00 0 
+7fd8c4340000-7fd8c4343000 rw-p 00000000 00:00 0 
+7fd8c4343000-7fd8c4344000 r--p 00021000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fd8c4344000-7fd8c4345000 rw-p 00022000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7fd8c4345000-7fd8c4346000 rw-p 00000000 00:00 0 
+7ffe259b9000-7ffe259db000 rw-p 00000000 00:00 0                          [stack]
+7ffe259dc000-7ffe259de000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+srun: error: node05: task 0: Aborted (core dumped)
 
 Number of Processes: 32, Number of Threads: 1
 Output file to: /nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/result.txt
-Multiplication Complete!
-Execution Time: 3 milliseconds
+Multiplication Complete! Execution Time: 55 milliseconds
+*** Error in `/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi': double free or corruption (out): 0x000000000146e180 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81499)[0x7f3d71fe0499]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x4038f6]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x403098]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f3d71f81445]
+/nfsmnt/121090741/CUHKSZ-CSC4005/project2/src/../build/src/mpi[0x40322f]
+======= Memory map: ========
+00400000-0040d000 r-xp 00000000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060c000-0060d000 r--p 0000c000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+0060d000-0060e000 rw-p 0000d000 00:2a 3231781355                         /nfsmnt/121090741/CUHKSZ-CSC4005/project2/build/src/mpi
+00c15000-01896000 rw-p 00000000 00:00 0                                  [heap]
+7f3d6546f000-7f3d654b0000 rw-s 00000000 00:13 628759697                  /dev/shm/mpich_shar_tmpVs9fs8 (deleted)
+7f3d654b0000-7f3d654f1000 rw-s 00000000 00:13 628759696                  /dev/shm/mpich_shar_tmp90AguZ (deleted)
+7f3d654f1000-7f3d65532000 rw-s 00000000 00:13 628759695                  /dev/shm/mpich_shar_tmpVJQowQ (deleted)
+7f3d657d3000-7f3d657df000 r-xp 00000000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f3d657df000-7f3d659de000 ---p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f3d659de000-7f3d659df000 r--p 0000b000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f3d659df000-7f3d659e0000 rw-p 0000c000 fd:00 65392                      /usr/lib64/libnss_files-2.17.so
+7f3d659e0000-7f3d659e6000 rw-p 00000000 00:00 0 
+7f3d6c000000-7f3d6c021000 rw-p 00000000 00:00 0 
+7f3d6c021000-7f3d70000000 ---p 00000000 00:00 0 
+7f3d717f9000-7f3d71834000 r-xp 00000000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f3d71834000-7f3d71a33000 ---p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f3d71a33000-7f3d71a34000 r--p 0003a000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f3d71a34000-7f3d71a35000 rw-p 0003b000 fd:00 1991367                    /usr/lib64/libquadmath.so.0.0.0
+7f3d71a35000-7f3d71b54000 r-xp 00000000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f3d71b54000-7f3d71d54000 ---p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f3d71d54000-7f3d71d55000 r--p 0011f000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f3d71d55000-7f3d71d57000 rw-p 00120000 fd:00 1991420                    /usr/lib64/libgfortran.so.3.0.0
+7f3d71d57000-7f3d71d5e000 r-xp 00000000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f3d71d5e000-7f3d71f5d000 ---p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f3d71f5d000-7f3d71f5e000 r--p 00006000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f3d71f5e000-7f3d71f5f000 rw-p 00007000 fd:00 65404                      /usr/lib64/librt-2.17.so
+7f3d71f5f000-7f3d72122000 r-xp 00000000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f3d72122000-7f3d72321000 ---p 001c3000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f3d72321000-7f3d72325000 r--p 001c2000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f3d72325000-7f3d72327000 rw-p 001c6000 fd:00 65374                      /usr/lib64/libc-2.17.so
+7f3d72327000-7f3d7232c000 rw-p 00000000 00:00 0 
+7f3d7232c000-7f3d72341000 r-xp 00000000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f3d72341000-7f3d72540000 ---p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f3d72540000-7f3d72541000 r--p 00014000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f3d72541000-7f3d72542000 rw-p 00015000 fd:00 1991393                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f3d72542000-7f3d72643000 r-xp 00000000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f3d72643000-7f3d72842000 ---p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f3d72842000-7f3d72843000 r--p 00100000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f3d72843000-7f3d72844000 rw-p 00101000 fd:00 65382                      /usr/lib64/libm-2.17.so
+7f3d72844000-7f3d7292d000 r-xp 00000000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f3d7292d000-7f3d72b2d000 ---p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f3d72b2d000-7f3d72b35000 r--p 000e9000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f3d72b35000-7f3d72b37000 rw-p 000f1000 fd:00 1991396                    /usr/lib64/libstdc++.so.6.0.19
+7f3d72b37000-7f3d72b4c000 rw-p 00000000 00:00 0 
+7f3d72b4c000-7f3d72b63000 r-xp 00000000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f3d72b63000-7f3d72d62000 ---p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f3d72d62000-7f3d72d63000 r--p 00016000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f3d72d63000-7f3d72d64000 rw-p 00017000 fd:00 65400                      /usr/lib64/libpthread-2.17.so
+7f3d72d64000-7f3d72d68000 rw-p 00000000 00:00 0 
+7f3d72d68000-7f3d72d8d000 r-xp 00000000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f3d72d8d000-7f3d72f8c000 ---p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f3d72f8c000-7f3d72f8d000 r--p 00024000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f3d72f8d000-7f3d72f8e000 rw-p 00025000 fd:00 571529                     /usr/lib64/libgomp.so.1.0.0
+7f3d72f8e000-7f3d731c8000 r-xp 00000000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f3d731c8000-7f3d733c7000 ---p 0023a000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f3d733c7000-7f3d733d5000 r--p 00239000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f3d733d5000-7f3d733d9000 rw-p 00247000 fd:00 2150191751                 /usr/lib64/mpich-3.2/lib/libmpi.so.12.1.0
+7f3d733d9000-7f3d73413000 rw-p 00000000 00:00 0 
+7f3d73413000-7f3d73433000 r-xp 00000000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f3d73433000-7f3d73632000 ---p 00020000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f3d73632000-7f3d73634000 r--p 0001f000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f3d73634000-7f3d73635000 rw-p 00021000 fd:00 2150191753                 /usr/lib64/mpich-3.2/lib/libmpicxx.so.12.1.0
+7f3d73635000-7f3d73657000 r-xp 00000000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7f3d73678000-7f3d736b9000 rw-s 00000000 00:13 628759694                  /dev/shm/mpich_shar_tmp5dLXyH (deleted)
+7f3d736b9000-7f3d736fa000 rw-s 00000000 00:13 628759693                  /dev/shm/mpich_shar_tmpRVTABy (deleted)
+7f3d7383b000-7f3d73844000 rw-p 00000000 00:00 0 
+7f3d73853000-7f3d73856000 rw-p 00000000 00:00 0 
+7f3d73856000-7f3d73857000 r--p 00021000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7f3d73857000-7f3d73858000 rw-p 00022000 fd:00 65367                      /usr/lib64/ld-2.17.so
+7f3d73858000-7f3d73859000 rw-p 00000000 00:00 0 
+7fff20415000-7fff20437000 rw-p 00000000 00:00 0                          [stack]
+7fff204b1000-7fff204b3000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+srun: error: node05: task 0: Aborted (core dumped)
 

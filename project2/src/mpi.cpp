@@ -1,12 +1,5 @@
-//
-// Created by Yang Yufan on 2023/10/07.
-// Email: yufanyang1@link.cuhk.edu.cn
-//
-// MPI + OpenMp + SIMD + Reordering Matrix Multiplication
-//
-
 #include <mpi.h>  // MPI Header
-#include <omp.h> 
+#include <omp.h>
 #include <immintrin.h>
 #include <stdexcept>
 #include <chrono>
@@ -14,85 +7,77 @@
 
 #define MASTER 0
 
-Matrix matrix_multiply_mpi(const Matrix& matrix1, const Matrix& matrix2) {
+Matrix matrix_multiply_mpi(const Matrix& matrix1, const Matrix& matrix2, int taskid, int numtasks, int thread_num) {
     if (matrix1.getCols() != matrix2.getRows()) {
-        throw std::invalid_argument(
-            "Matrix dimensions are not compatible for multiplication.");
+        throw std::invalid_argument("Matrix dimensions are not compatible for multiplication.");
     }
 
     size_t M = matrix1.getRows(), K = matrix1.getCols(), N = matrix2.getCols();
+    size_t rows_per_process = M / numtasks;
+    size_t start_row = taskid * rows_per_process;
+    size_t end_row = (taskid == numtasks - 1) ? M : start_row + rows_per_process;
+
+    Matrix local_result(rows_per_process, N);
+
+    omp_set_num_threads(thread_num);
+    #pragma omp parallel for collapse(2) schedule(static)
+    for (size_t i = start_row; i < end_row; i += 64) { // Loop blocks for better cache usage
+        for (size_t j = 0; j < N; j += 64) {
+            for (size_t k = 0; k < K; k += 64) {
+                for (size_t ii = i; ii < std::min(i + 64, end_row); ++ii) {
+                    for (size_t jj = j; jj < std::min(j + 64, N); jj += 8) { // SIMD vector width
+                        __m256i sum_vec = _mm256_loadu_si256((__m256i*)&local_result[ii - start_row][jj]);
+                        for (size_t kk = k; kk < std::min(k + 64, K); ++kk) {
+                            __m256i a_vec = _mm256_set1_epi32(matrix1[ii][kk]);
+                            __m256i b_vec = _mm256_loadu_si256((__m256i*)&matrix2[kk][jj]);
+                            sum_vec = _mm256_add_epi32(sum_vec, _mm256_mullo_epi32(a_vec, b_vec));
+                        }
+                        _mm256_storeu_si256((__m256i*)&local_result[ii - start_row][jj], sum_vec);
+                    }
+                }
+            }
+        }
+    }
 
     Matrix result(M, N);
-
-    // Your Code Here!
-    // Optimizing Matrix Multiplication 
-    // In addition to OpenMP, SIMD, Memory Locality and Cache Missing,
-    // Further Applying MPI
-    // Note:
-    // You can change the argument of the function 
-    // for your convenience of task division
+    if (taskid == MASTER) {
+        MPI_Gather(local_result[0], rows_per_process * N, MPI_INT,
+                   result[0], rows_per_process * N, MPI_INT, MASTER, MPI_COMM_WORLD);
+    } else {
+        MPI_Gather(local_result[0], rows_per_process * N, MPI_INT,
+                   nullptr, 0, MPI_INT, MASTER, MPI_COMM_WORLD);
+    }
 
     return result;
 }
 
 int main(int argc, char** argv) {
-    // Verify input argument format
     if (argc != 5) {
-        throw std::invalid_argument(
-            "Invalid argument, should be: ./executable thread_num "
-            "/path/to/matrix1 /path/to/matrix2 /path/to/multiply_result\n");
+        std::cerr << "Invalid argument, should be: ./executable thread_num "
+                  "/path/to/matrix1 /path/to/matrix2 /path/to/multiply_result\n";
+        return 1;
     }
 
-    // Start the MPI
     MPI_Init(&argc, &argv);
-    // How many processes are running
-    int numtasks;
+    int numtasks, taskid;
     MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
-    // What's my rank?
-    int taskid;
     MPI_Comm_rank(MPI_COMM_WORLD, &taskid);
-    // Which node am I running on?
-    int len;
-    char hostname[MPI_MAX_PROCESSOR_NAME];
-    MPI_Get_processor_name(hostname, &len);
-    MPI_Status status;
 
     int thread_num = atoi(argv[1]);
-    omp_set_num_threads(thread_num);
-
-    // Read Matrix
-    const std::string matrix1_path = argv[2];
-
-    const std::string matrix2_path = argv[3];
-
-    const std::string result_path = argv[4];
-
-    Matrix matrix1 = Matrix::loadFromFile(matrix1_path);
-
-    Matrix matrix2 = Matrix::loadFromFile(matrix2_path);
+    Matrix matrix1 = Matrix::loadFromFile(argv[2]);
+    Matrix matrix2 = Matrix::loadFromFile(argv[3]);
+    std::string result_path = argv[4];
 
     auto start_time = std::chrono::high_resolution_clock::now();
+
+    Matrix result = matrix_multiply_mpi(matrix1, matrix2, taskid, numtasks, thread_num);
+
     if (taskid == MASTER) {
-        Matrix result = matrix_multiply_mpi(matrix1, matrix2);
-
-        // Your Code Here for Synchronization!
-
         auto end_time = std::chrono::high_resolution_clock::now();
-        auto elapsed_time =
-            std::chrono::duration_cast<std::chrono::milliseconds>(end_time -
-                                                                  start_time);
-
+        auto elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
         result.saveToFile(result_path);
-
         std::cout << "Output file to: " << result_path << std::endl;
-
-        std::cout << "Multiplication Complete!" << std::endl;
-        std::cout << "Execution Time: " << elapsed_time.count()
-                  << " milliseconds" << std::endl;
-    } else {
-        Matrix result = matrix_multiply_mpi(matrix1, matrix2);
-
-        // Your Code Here for Synchronization!
+        std::cout << "Multiplication Complete! Execution Time: " << elapsed_time.count() << " milliseconds" << std::endl;
     }
 
     MPI_Finalize();
