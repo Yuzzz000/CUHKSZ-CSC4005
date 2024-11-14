@@ -44,6 +44,56 @@ void insertionSort(std::vector<int> &bucket)
 void bucketSort(std::vector<int> &vec, int num_buckets, int numtasks, int taskid, MPI_Status *status)
 {
     /* Your codes here! */
+    int n = vec.size();
+    int max_val = *std::max_element(vec.begin(), vec.end());
+    int min_val = *std::min_element(vec.begin(), vec.end());
+    int range = max_val - min_val + 1;
+    int bucket_range = range / num_buckets;
+
+    std::vector<std::vector<int>> buckets(num_buckets);
+
+    for (int i = 0; i < num_buckets; i++) {
+        buckets[i].reserve(n / num_buckets + 1); // Reserve space to avoid reallocations
+    }
+
+    // Distribute elements into buckets based on their value
+    for (int num : vec) {
+        int index = (num - min_val) / bucket_range;
+        if (index >= num_buckets) index = num_buckets - 1;  // Handle edge case for max value
+        buckets[index].push_back(num);
+    }
+
+    // Each process sorts its portion of buckets
+    std::vector<int> local_sorted;
+    for (int i = taskid; i < num_buckets; i += numtasks) {
+        insertionSort(buckets[i]);
+        local_sorted.insert(local_sorted.end(), buckets[i].begin(), buckets[i].end());
+    }
+
+    // Gather all sorted sub-vectors at the master
+    std::vector<int> all_sorted;
+    std::vector<int> recvcounts(numtasks);
+    std::vector<int> displacements(numtasks);
+
+    int local_size = local_sorted.size();
+    MPI_Gather(&local_size, 1, MPI_INT, recvcounts.data(), 1, MPI_INT, MASTER, MPI_COMM_WORLD);
+
+    if (taskid == MASTER) {
+        int total_size = 0;
+        for (int i = 0; i < numtasks; ++i) {
+            displacements[i] = total_size;
+            total_size += recvcounts[i];
+        }
+        all_sorted.resize(total_size);
+    }
+
+    MPI_Gatherv(local_sorted.data(), local_size, MPI_INT,
+                all_sorted.data(), recvcounts.data(), displacements.data(), MPI_INT,
+                MASTER, MPI_COMM_WORLD);
+
+    if (taskid == MASTER) {
+        vec = std::move(all_sorted);  // Place the sorted data back into the original vector
+    }
 }
 
 int main(int argc, char **argv)
