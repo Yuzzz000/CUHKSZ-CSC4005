@@ -16,15 +16,72 @@
  * TODO: Implement parallel merge algorithm
  */
 void merge(std::vector<int>& vec, int l, int m, int r) {
-    /* Your codes here! */
+    int n1 = m - l + 1;
+    int n2 = r - m;
+    std::vector<int> L(n1), R(n2);
+
+    for (int i = 0; i < n1; i++) {
+        L[i] = vec[l + i];
+    }
+    for (int i = 0; i < n2; i++) {
+        R[i] = vec[m + 1 + i];
+    }
+
+    int i = 0;
+    int j = 0;
+    int k = l;
+
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            vec[k] = L[i];
+            i++;
+        } else {
+            vec[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        vec[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        vec[k] = R[j];
+        j++;
+        k++;
+    }
 }
 
 /**
  * TODO: Implement parallel merge sort by dynamic threads creation
  */
 void mergeSort(std::vector<int>& vec, int l, int r, int thread_num) {
-    /* Your codes here! */
+    if (l < r) {
+        int m = l + (r - l) / 2;
+
+        if (thread_num > 1) {
+            int new_thread_count = thread_num / 2; // Split available threads between the two recursive calls
+
+            #pragma omp task shared(vec)
+            mergeSort(vec, l, m, new_thread_count);
+
+            #pragma omp task shared(vec)
+            mergeSort(vec, m + 1, r, new_thread_count);
+
+            #pragma omp taskwait
+        } else {
+            // If not enough threads are available, perform the recursive calls sequentially
+            mergeSort(vec, l, m, 1);
+            mergeSort(vec, m + 1, r, 1);
+        }
+
+        merge(vec, l, m, r);
+    }
 }
+
 
 int main(int argc, char** argv) {
     // Verify input argument format

@@ -1,108 +1,98 @@
 std::sort Sequential for Normal dataset (Optimized with -O2)
 std::sort Complete!
-Execution Time: 11740 milliseconds
+Execution Time: 11702 milliseconds
 
 Bucket Sort MPI for Normally distributed dataset (Optimized with -O2)
 Number of processes: 1
 Bucket Sort Complete!
-Execution Time: 12865 milliseconds
-std::sort Time: 11971 milliseconds
+Execution Time: 12812 milliseconds
+std::sort Time: 11927 milliseconds
 Pass the sorting result check!
 Number of processes: 4
 Bucket Sort Complete!
-Execution Time: 20242 milliseconds
-std::sort Time: 15853 milliseconds
+Execution Time: 20004 milliseconds
+std::sort Time: 15829 milliseconds
 Pass the sorting result check!
 Number of processes: 16
 Bucket Sort Complete!
-Execution Time: 24511 milliseconds
-std::sort Time: 15915 milliseconds
+Execution Time: 25699 milliseconds
+std::sort Time: 15898 milliseconds
 Pass the sorting result check!
 Number of processes: 32
 Bucket Sort Complete!
-Execution Time: 29231 milliseconds
-std::sort Time: 16127 milliseconds
+Execution Time: 28567 milliseconds
+std::sort Time: 15953 milliseconds
 Pass the sorting result check!
 
 Quick Sort MPI for Normal dataset (Optimized with -O2)
 Number of cores: 1
 Quick Sort Complete!
-Execution Time: 13846 milliseconds
-std::sort Time: 11972 milliseconds
+Execution Time: 13794 milliseconds
+std::sort Time: 11934 milliseconds
 Pass the sorting result check!
 Number of cores: 4
 Quick Sort Complete!
-Execution Time: 9819 milliseconds
-std::sort Time: 15933 milliseconds
+Execution Time: 9821 milliseconds
+std::sort Time: 16000 milliseconds
 Pass the sorting result check!
 Number of cores: 16
 Quick Sort Complete!
-Execution Time: 9895 milliseconds
-std::sort Time: 15985 milliseconds
+Execution Time: 9604 milliseconds
+std::sort Time: 15918 milliseconds
 Pass the sorting result check!
 Number of cores: 32
 Quick Sort Complete!
-Execution Time: 10822 milliseconds
-std::sort Time: 16283 milliseconds
+Execution Time: 10667 milliseconds
+std::sort Time: 15995 milliseconds
 Pass the sorting result check!
 
 PSRS for Normal dataset (Optimized with -O2)
 Number of cores: 1
-[node02:0] Phase 0 took 6338 ms
-[node02:0] Phase Merge took 239 ms
+[node07:0] Phase 0 took 6313 ms
+[node07:0] Phase Merge took 238 ms
 Sorting Complete!
-Execution Time: 16029 		milliseconds
-std::sort Time: 12159 milliseconds
+Execution Time: 15978 		milliseconds
+std::sort Time: 12102 milliseconds
 Pass the sorting result check!
 Number of cores: 4
-[node02:0] Phase 0 took 8325 ms
-[node02:0] Phase Merge took 363 ms
+[node07:0] Phase 0 took 8339 ms
+[node07:0] Phase Merge took 362 ms
 Sorting Complete!
-Execution Time: 7863 		milliseconds
-std::sort Time: 16109 milliseconds
+Execution Time: 7864 		milliseconds
+std::sort Time: 16103 milliseconds
 Pass the sorting result check!
 Number of cores: 16
-[node02:0] Phase 0 took 8283 ms
-[node02:0] Phase Merge took 357 ms
+[node07:0] Phase 0 took 8279 ms
+[node07:0] Phase Merge took 355 ms
 Sorting Complete!
-Execution Time: 1947 		milliseconds
-std::sort Time: 16223 milliseconds
+Execution Time: 1945 		milliseconds
+std::sort Time: 16200 milliseconds
 Pass the sorting result check!
 Number of cores: 32
-[node02:0] Phase 0 took 8355 ms
-[node02:0] Phase Merge took 342 ms
+[node07:0] Phase 0 took 8307 ms
+[node07:0] Phase Merge took 341 ms
 Sorting Complete!
-Execution Time: 1146 		milliseconds
-std::sort Time: 16285 milliseconds
+Execution Time: 1138 		milliseconds
+std::sort Time: 16232 milliseconds
 Pass the sorting result check!
 
 Merge Sort for Normal dataset (Optimized with -O2)
 Number of threads: 1
 Merge Sort Complete!
-Execution Time: 0 milliseconds
-std::sort Time: 11830 milliseconds
-Fail to pass the sorting result check!
-0th element of the sorted vector is expected to be 8521
-But your 0th element is 53781776
+Execution Time: 23543 milliseconds
+std::sort Time: 11921 milliseconds
+Pass the sorting result check!
 Number of threads: 4
 Merge Sort Complete!
-Execution Time: 0 milliseconds
-std::sort Time: 11839 milliseconds
-Fail to pass the sorting result check!
-0th element of the sorted vector is expected to be 8521
-But your 0th element is 53781776
+Execution Time: 23528 milliseconds
+std::sort Time: 11927 milliseconds
+Pass the sorting result check!
 Number of threads: 16
 Merge Sort Complete!
-Execution Time: 0 milliseconds
-std::sort Time: 11862 milliseconds
-Fail to pass the sorting result check!
-0th element of the sorted vector is expected to be 8521
-But your 0th element is 53781776
+Execution Time: 23525 milliseconds
+std::sort Time: 11925 milliseconds
+Pass the sorting result check!
 Number of threads: 32
-Merge Sort Complete!
-Execution Time: 0 milliseconds
-std::sort Time: 11838 milliseconds
-Fail to pass the sorting result check!
-0th element of the sorted vector is expected to be 8521
-But your 0th element is 53781776
-
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 259487 ON node07 CANCELLED AT 2024-11-15T11:21:56 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 259487.16 ON node07 CANCELLED AT 2024-11-15T11:21:56 DUE TO TIME LIMIT ***
