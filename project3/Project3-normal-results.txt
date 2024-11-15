@@ -1,0 +1,108 @@
+std::sort Sequential for Normal dataset (Optimized with -O2)
+std::sort Complete!
+Execution Time: 11740 milliseconds
+
+Bucket Sort MPI for Normally distributed dataset (Optimized with -O2)
+Number of processes: 1
+Bucket Sort Complete!
+Execution Time: 12865 milliseconds
+std::sort Time: 11971 milliseconds
+Pass the sorting result check!
+Number of processes: 4
+Bucket Sort Complete!
+Execution Time: 20242 milliseconds
+std::sort Time: 15853 milliseconds
+Pass the sorting result check!
+Number of processes: 16
+Bucket Sort Complete!
+Execution Time: 24511 milliseconds
+std::sort Time: 15915 milliseconds
+Pass the sorting result check!
+Number of processes: 32
+Bucket Sort Complete!
+Execution Time: 29231 milliseconds
+std::sort Time: 16127 milliseconds
+Pass the sorting result check!
+
+Quick Sort MPI for Normal dataset (Optimized with -O2)
+Number of cores: 1
+Quick Sort Complete!
+Execution Time: 13846 milliseconds
+std::sort Time: 11972 milliseconds
+Pass the sorting result check!
+Number of cores: 4
+Quick Sort Complete!
+Execution Time: 9819 milliseconds
+std::sort Time: 15933 milliseconds
+Pass the sorting result check!
+Number of cores: 16
+Quick Sort Complete!
+Execution Time: 9895 milliseconds
+std::sort Time: 15985 milliseconds
+Pass the sorting result check!
+Number of cores: 32
+Quick Sort Complete!
+Execution Time: 10822 milliseconds
+std::sort Time: 16283 milliseconds
+Pass the sorting result check!
+
+PSRS for Normal dataset (Optimized with -O2)
+Number of cores: 1
+[node02:0] Phase 0 took 6338 ms
+[node02:0] Phase Merge took 239 ms
+Sorting Complete!
+Execution Time: 16029 		milliseconds
+std::sort Time: 12159 milliseconds
+Pass the sorting result check!
+Number of cores: 4
+[node02:0] Phase 0 took 8325 ms
+[node02:0] Phase Merge took 363 ms
+Sorting Complete!
+Execution Time: 7863 		milliseconds
+std::sort Time: 16109 milliseconds
+Pass the sorting result check!
+Number of cores: 16
+[node02:0] Phase 0 took 8283 ms
+[node02:0] Phase Merge took 357 ms
+Sorting Complete!
+Execution Time: 1947 		milliseconds
+std::sort Time: 16223 milliseconds
+Pass the sorting result check!
+Number of cores: 32
+[node02:0] Phase 0 took 8355 ms
+[node02:0] Phase Merge took 342 ms
+Sorting Complete!
+Execution Time: 1146 		milliseconds
+std::sort Time: 16285 milliseconds
+Pass the sorting result check!
+
+Merge Sort for Normal dataset (Optimized with -O2)
+Number of threads: 1
+Merge Sort Complete!
+Execution Time: 0 milliseconds
+std::sort Time: 11830 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 8521
+But your 0th element is 53781776
+Number of threads: 4
+Merge Sort Complete!
+Execution Time: 0 milliseconds
+std::sort Time: 11839 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 8521
+But your 0th element is 53781776
+Number of threads: 16
+Merge Sort Complete!
+Execution Time: 0 milliseconds
+std::sort Time: 11862 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 8521
+But your 0th element is 53781776
+Number of threads: 32
+Merge Sort Complete!
+Execution Time: 0 milliseconds
+std::sort Time: 11838 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 8521
+But your 0th element is 53781776
+
