@@ -68,117 +68,131 @@ void phase_0()
  * 1. You need to sort the local partition by any algorithm you want
  * 2. You need to pick T local regular samples
  */
-void phase_1()
-{
-    // Sort local data
+void phase_1() {
+    // Sort local data using quicksort
     std::sort(localData.begin(), localData.end());
-
-    // Calculate sampling interval
-    int sampleInterval = std::ceil(localData.size() / static_cast<float>(T));
-    localRegularSamples.clear();
-    for (int i = 0; i < T && (i * sampleInterval) < localData.size(); ++i)
-    {
-        localRegularSamples.push_back(localData[i * sampleInterval]);
+    
+    // Calculate regular sample size and interval
+    int w = dataCurrentProc / T;
+    localRegularSamples.resize(T);
+    
+    // Select regular samples
+    for (int i = 0; i < T; i++) {
+        int index = i * w;
+        if (index < dataCurrentProc) {
+            localRegularSamples[i] = localData[index];
+        } else {
+            // If we run out of elements, use the last element
+            localRegularSamples[i] = localData[dataCurrentProc - 1];
+        }
     }
 }
 
-/**
- * TODO: Pivot Selection Phase
- * 1. Gather all the local samples from each process
- * 2. Select (T - 1) global pivots
- */
-void phase_2()
-{
-    // Resize on all processes
-    pivots.resize(T - 1);  
-
-    if (rank == MASTER)
-    {
+void phase_2() {
+    if (rank == MASTER) {
+        regularSamples.resize(T * T);
+    }
+    
+    // Gather all samples to master process
+    MPI_Gather(localRegularSamples.data(), T, MPI_INT,
+               regularSamples.data(), T, MPI_INT,
+               MASTER, MPI_COMM_WORLD);
+    
+    if (rank == MASTER) {
+        // Sort all samples
         std::sort(regularSamples.begin(), regularSamples.end());
-        for (int i = 1; i < T; i++)  // Select (T-1) pivots
-        {
-            pivots[i - 1] = regularSamples[i * T / (T - 1) - 1];
+        
+        // Select T-1 pivots
+        pivots.resize(T-1);
+        for (int i = 0; i < T-1; i++) {
+            pivots[i] = regularSamples[(i+1)*T];
         }
     }
-
-    // Debugging output to confirm pivots are ready
-    //std::cout << "Rank " << rank << " ready to broadcast pivots, size: " << pivots.size() << std::endl;
-
-    // Ensure MPI_Bcast has a valid buffer
-    MPI_Bcast(pivots.data(), pivots.size(), MPI_INT, MASTER, MPI_COMM_WORLD);
+    
+    // Broadcast pivots to all processes
+    if (rank != MASTER) {
+        pivots.resize(T-1);
+    }
+    MPI_Bcast(pivots.data(), T-1, MPI_INT, MASTER, MPI_COMM_WORLD);
 }
 
-
-/**
- * TODO: Split the data pieces and exchange them across processes
- */
-void phase_3()
-{
-    // Create T partitions based on the pivots
-    splitters = std::vector<int>(T + 1, 0);  // +1 to handle boundary
-    int j = 0;
-    for (int i = 0; i < localData.size(); ++i)
-    {
-        if (j < pivots.size() && localData[i] > pivots[j])
-        {
-            splitters[++j] = i;
-        }
+void phase_3() {
+    // Find splitting points in local sorted data
+    splitters.resize(T+1);
+    splitters[0] = 0;
+    splitters[T] = dataCurrentProc;
+    
+    for (int i = 1; i < T; i++) {
+        splitters[i] = std::lower_bound(localData.begin(), localData.end(), pivots[i-1]) - localData.begin();
     }
-    splitters[T] = localData.size();
-
-    // Exchange data segments with other processes
+    
+    // Calculate lengths of partitions
     lengths.resize(T);
-    obtainedKeys.clear();
-    for (int i = 0; i < T; ++i)
-    {
-        int segmentSize = splitters[i + 1] - splitters[i];
-        MPI_Sendrecv(&segmentSize, 1, MPI_INT, i, 0, &lengths[i], 1, MPI_INT, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    for (int i = 0; i < T; i++) {
+        lengths[i] = splitters[i+1] - splitters[i];
     }
-
-    obtainedKeys.resize(T * dataCurrentProc);  // overestimate size
-    for (int i = 0; i < T; ++i)
-    {
-        MPI_Sendrecv(&localData[splitters[i]], lengths[i], MPI_INT, i, 0,
-                     &obtainedKeys[obtainedKeysSize], lengths[i], MPI_INT, i, 0,
-                     MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        obtainedKeysSize += lengths[i];
+    
+    // Allocate receive buffer
+    std::vector<int> recvLengths(T);
+    MPI_Alltoall(lengths.data(), 1, MPI_INT,
+                 recvLengths.data(), 1, MPI_INT,
+                 MPI_COMM_WORLD);
+    
+    // Calculate total size of data to receive
+    obtainedKeysSize = 0;
+    for (int i = 0; i < T; i++) {
+        obtainedKeysSize += recvLengths[i];
     }
+    obtainedKeys.resize(obtainedKeysSize);
+    
+    // Calculate displacements for MPI_Alltoallv
+    std::vector<int> sendDispl(T), recvDispl(T);
+    sendDispl[0] = 0;
+    recvDispl[0] = 0;
+    for (int i = 1; i < T; i++) {
+        sendDispl[i] = sendDispl[i-1] + lengths[i-1];
+        recvDispl[i] = recvDispl[i-1] + recvLengths[i-1];
+    }
+    
+    // Exchange data
+    MPI_Alltoallv(localData.data(), lengths.data(), sendDispl.data(), MPI_INT,
+                  obtainedKeys.data(), recvLengths.data(), recvDispl.data(), MPI_INT,
+                  MPI_COMM_WORLD);
 }
 
-
-/**
- * TODO: Merge local partitions
- * You can use k-way merge in Task #2 if you want
- */
-void phase_4()
-{
-    mergedArray = std::vector<int>(obtainedKeys.begin(), obtainedKeys.begin() + obtainedKeysSize);
+void phase_4() {
+    // Merge the obtained keys
+    mergedArray = obtainedKeys;
     std::sort(mergedArray.begin(), mergedArray.end());
 }
 
-
-/**
- * TODO: Merge all local arrays into SortedData in master process
- */
-void phase_merge()
-{
-    // Compute displacements for each process
-    std::vector<int> displacements = prefixSum(lengths);  // make sure prefixSum correctly handles boundary
-
-    if (rank == MASTER)
-    {
+void phase_merge() {
+    std::vector<int> recvCounts(T);
+    MPI_Gather(&obtainedKeysSize, 1, MPI_INT,
+               recvCounts.data(), 1, MPI_INT,
+               MASTER, MPI_COMM_WORLD);
+               
+    if (rank == MASTER) {
         SortedData.resize(SIZE);
-        MPI_Gatherv(&mergedArray[0], mergedArray.size(), MPI_INT,
-                    &SortedData[0], &lengths[0], &displacements[0], MPI_INT, MASTER, MPI_COMM_WORLD);
+        std::vector<int> displacements(T, 0);
+        for (int i = 1; i < T; i++) {
+            displacements[i] = displacements[i-1] + recvCounts[i-1];
+        }
+        
+        MPI_Gatherv(mergedArray.data(), obtainedKeysSize, MPI_INT,
+                    SortedData.data(), recvCounts.data(), displacements.data(), MPI_INT,
+                    MASTER, MPI_COMM_WORLD);
+    } else {
+        MPI_Gatherv(mergedArray.data(), obtainedKeysSize, MPI_INT,
+                    nullptr, nullptr, nullptr, MPI_INT,
+                    MASTER, MPI_COMM_WORLD);
     }
 }
-
-
 
 /**
  * You can measure the time of each phase with this function
  */
-void measureTime(void (*fun)(), const char *processorName, const char *title, int shouldLog)
+void measureTime(void (*fun)(), char *processorName, char *title, int shouldLog)
 {
 	if (shouldLog)
 	{
