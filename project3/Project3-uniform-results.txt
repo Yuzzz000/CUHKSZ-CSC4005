@@ -1,0 +1,70 @@
+std::sort Sequential for Uniform dataset (Optimized with -O2)
+std::sort Complete!
+Execution Time: 12089 milliseconds
+
+Bucket Sort MPI for Uniformly dataset (Optimized with -O2)
+Number of processes: 1
+Bucket Sort Complete!
+Execution Time: 19089 milliseconds
+std::sort Time: 12217 milliseconds
+Pass the sorting result check!
+Number of processes: 4
+Bucket Sort Complete!
+Execution Time: 25447 milliseconds
+std::sort Time: 16031 milliseconds
+Pass the sorting result check!
+Number of processes: 16
+Bucket Sort Complete!
+Execution Time: 19562 milliseconds
+std::sort Time: 16236 milliseconds
+Pass the sorting result check!
+Number of processes: 32
+Bucket Sort Complete!
+Execution Time: 26460 milliseconds
+std::sort Time: 16155 milliseconds
+Pass the sorting result check!
+
+Quick Sort MPI for Uniform dataset (Optimized with -O2)
+Number of cores: 1
+Quick Sort Complete!
+Execution Time: 14255 milliseconds
+std::sort Time: 12342 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 1
+But your 0th element is 0
+Number of cores: 4
+Quick Sort Complete!
+Execution Time: 7306 milliseconds
+std::sort Time: 16545 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 1
+But your 0th element is 0
+Number of cores: 16
+Quick Sort Complete!
+Execution Time: 7479 milliseconds
+std::sort Time: 16563 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 1
+But your 0th element is 0
+Number of cores: 32
+Quick Sort Complete!
+Execution Time: 10683 milliseconds
+std::sort Time: 16533 milliseconds
+Fail to pass the sorting result check!
+0th element of the sorted vector is expected to be 1
+But your 0th element is 0
+
+PSRS MPI for Uniform dataset (Optimized with -O2)
+Number of cores: 1
+[node03:0] Phase 0 took 3560 ms
+[node03:0] Phase Merge took 329 ms
+Sorting Complete!
+Execution Time: 15382 		milliseconds
+std::sort Time: 12064 milliseconds
+Pass the sorting result check!
+Number of cores: 4
+[node03:0] Phase 0 took 4501 ms
+srun: error: node03: task 0: Segmentation fault (core dumped)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 258831.10 ON node03 CANCELLED AT 2024-11-15T08:44:26 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 258831 ON node03 CANCELLED AT 2024-11-15T08:44:26 DUE TO TIME LIMIT ***
