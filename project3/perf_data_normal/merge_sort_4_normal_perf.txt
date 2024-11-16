@@ -1,0 +1,15 @@
+# started on Sat Nov 16 01:16:01 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 4 ./build/src/mergesort/mergesort_openmp normal 4 100000000':
+
+            40,896      cache-misses:u            #   35.181 % of all cache refs    
+           116,244      cache-references:u                                          
+             1,597      page-faults:u                                               
+
+      42.347495808 seconds time elapsed
+
+       0.006852000 seconds user
+       0.015152000 seconds sys
+
+

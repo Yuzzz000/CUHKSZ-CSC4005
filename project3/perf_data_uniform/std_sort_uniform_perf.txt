@@ -1,0 +1,15 @@
+# started on Sat Nov 16 01:07:24 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 1 ./build/src/std_sort uniform 100000000':
+
+            37,366      cache-misses:u            #   31.389 % of all cache refs    
+           119,043      cache-references:u                                          
+             1,599      page-faults:u                                               
+
+      14.662869037 seconds time elapsed
+
+       0.010843000 seconds user
+       0.009759000 seconds sys
+
+

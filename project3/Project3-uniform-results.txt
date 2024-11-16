@@ -1,100 +1,100 @@
 std::sort Sequential for Uniform dataset (Optimized with -O2)
 std::sort Complete!
-Execution Time: 12092 milliseconds
+Execution Time: 11727 milliseconds
 
 Bucket Sort MPI for Uniformly dataset (Optimized with -O2)
 Number of processes: 1
 Bucket Sort Complete!
-Execution Time: 19070 milliseconds
-std::sort Time: 12215 milliseconds
+Execution Time: 12736 milliseconds
+std::sort Time: 11930 milliseconds
 Pass the sorting result check!
 Number of processes: 4
 Bucket Sort Complete!
-Execution Time: 23029 milliseconds
-std::sort Time: 16045 milliseconds
+Execution Time: 15397 milliseconds
+std::sort Time: 15934 milliseconds
 Pass the sorting result check!
 Number of processes: 16
 Bucket Sort Complete!
-Execution Time: 20217 milliseconds
-std::sort Time: 16278 milliseconds
+Execution Time: 19609 milliseconds
+std::sort Time: 15936 milliseconds
 Pass the sorting result check!
 Number of processes: 32
 Bucket Sort Complete!
-Execution Time: 24950 milliseconds
-std::sort Time: 16150 milliseconds
+Execution Time: 24894 milliseconds
+std::sort Time: 16025 milliseconds
 Pass the sorting result check!
 
 Quick Sort MPI for Uniform dataset (Optimized with -O2)
 Number of cores: 1
 Quick Sort Complete!
-Execution Time: 14580 milliseconds
-std::sort Time: 12183 milliseconds
+Execution Time: 13910 milliseconds
+std::sort Time: 11937 milliseconds
 Pass the sorting result check!
 Number of cores: 4
 Quick Sort Complete!
-Execution Time: 10215 milliseconds
-std::sort Time: 16222 milliseconds
+Execution Time: 9757 milliseconds
+std::sort Time: 15910 milliseconds
 Pass the sorting result check!
 Number of cores: 16
 Quick Sort Complete!
-Execution Time: 9301 milliseconds
-std::sort Time: 16257 milliseconds
+Execution Time: 8868 milliseconds
+std::sort Time: 15953 milliseconds
 Pass the sorting result check!
 Number of cores: 32
 Quick Sort Complete!
-Execution Time: 9983 milliseconds
-std::sort Time: 16291 milliseconds
+Execution Time: 9809 milliseconds
+std::sort Time: 16024 milliseconds
 Pass the sorting result check!
 
 PSRS MPI for Uniform dataset (Optimized with -O2)
 Number of cores: 1
-[node03:0] Phase 0 took 3678 ms
-[node03:0] Phase Merge took 362 ms
+[node07:0] Phase 0 took 3201 ms
+[node07:0] Phase Merge took 238 ms
 Sorting Complete!
-Execution Time: 16768 		milliseconds
-std::sort Time: 12350 milliseconds
+Execution Time: 15994 		milliseconds
+std::sort Time: 12094 milliseconds
 Pass the sorting result check!
 Number of cores: 4
-[node03:0] Phase 0 took 4610 ms
-[node03:0] Phase Merge took 520 ms
+[node07:0] Phase 0 took 4259 ms
+[node07:0] Phase Merge took 364 ms
 Sorting Complete!
-Execution Time: 7756 		milliseconds
-std::sort Time: 16358 milliseconds
+Execution Time: 7474 		milliseconds
+std::sort Time: 16116 milliseconds
 Pass the sorting result check!
 Number of cores: 16
-[node03:0] Phase 0 took 4492 ms
-[node03:0] Phase Merge took 509 ms
+[node07:0] Phase 0 took 4230 ms
+[node07:0] Phase Merge took 351 ms
 Sorting Complete!
-Execution Time: 2069 		milliseconds
-std::sort Time: 16519 milliseconds
+Execution Time: 1898 		milliseconds
+std::sort Time: 16199 milliseconds
 Pass the sorting result check!
 Number of cores: 32
-[node03:0] Phase 0 took 4538 ms
-[node03:0] Phase Merge took 496 ms
+[node07:0] Phase 0 took 4203 ms
+[node07:0] Phase Merge took 339 ms
 Sorting Complete!
-Execution Time: 1290 		milliseconds
-std::sort Time: 16700 milliseconds
+Execution Time: 1134 		milliseconds
+std::sort Time: 16257 milliseconds
 Pass the sorting result check!
 
 Merge Sort OpenMP for Uniform dataset (Optimized with -O2)
 Number of threads: 1
 Merge Sort Complete!
-Execution Time: 24456 milliseconds
-std::sort Time: 12211 milliseconds
+Execution Time: 23596 milliseconds
+std::sort Time: 11925 milliseconds
 Pass the sorting result check!
 Number of threads: 4
 Merge Sort Complete!
-Execution Time: 23679 milliseconds
-std::sort Time: 11953 milliseconds
+Execution Time: 23611 milliseconds
+std::sort Time: 11923 milliseconds
 Pass the sorting result check!
 Number of threads: 16
 Merge Sort Complete!
-Execution Time: 23639 milliseconds
-std::sort Time: 11954 milliseconds
+Execution Time: 23571 milliseconds
+std::sort Time: 11930 milliseconds
 Pass the sorting result check!
 Number of threads: 32
 Merge Sort Complete!
-Execution Time: 23632 milliseconds
-std::sort Time: 11964 milliseconds
+Execution Time: 23596 milliseconds
+std::sort Time: 11924 milliseconds
 Pass the sorting result check!
 

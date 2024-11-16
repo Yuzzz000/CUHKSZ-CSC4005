@@ -1,0 +1,15 @@
+# started on Sat Nov 16 01:13:46 2024
+
+
+ Performance counter stats for 'srun -n 32 --cpus-per-task 1 --mpi=pmi2 ./build/src/psrs/psrs_mpi uniform 100000000':
+
+            56,337      cache-misses:u            #   39.402 % of all cache refs    
+           142,980      cache-references:u                                          
+             1,624      page-faults:u                                               
+
+      22.035911077 seconds time elapsed
+
+       0.017475000 seconds user
+       0.014198000 seconds sys
+
+

@@ -1,98 +1,95 @@
 std::sort Sequential for Normal dataset (Optimized with -O2)
 std::sort Complete!
-Execution Time: 11702 milliseconds
+Execution Time: 11703 milliseconds
 
 Bucket Sort MPI for Normally distributed dataset (Optimized with -O2)
 Number of processes: 1
 Bucket Sort Complete!
-Execution Time: 12812 milliseconds
-std::sort Time: 11927 milliseconds
+Execution Time: 12754 milliseconds
+std::sort Time: 11929 milliseconds
 Pass the sorting result check!
 Number of processes: 4
 Bucket Sort Complete!
-Execution Time: 20004 milliseconds
-std::sort Time: 15829 milliseconds
+Execution Time: 20205 milliseconds
+std::sort Time: 15828 milliseconds
 Pass the sorting result check!
 Number of processes: 16
 Bucket Sort Complete!
-Execution Time: 25699 milliseconds
-std::sort Time: 15898 milliseconds
+Execution Time: 24349 milliseconds
+std::sort Time: 15901 milliseconds
 Pass the sorting result check!
 Number of processes: 32
 Bucket Sort Complete!
-Execution Time: 28567 milliseconds
-std::sort Time: 15953 milliseconds
+Execution Time: 28405 milliseconds
+std::sort Time: 15977 milliseconds
 Pass the sorting result check!
 
 Quick Sort MPI for Normal dataset (Optimized with -O2)
 Number of cores: 1
 Quick Sort Complete!
-Execution Time: 13794 milliseconds
-std::sort Time: 11934 milliseconds
+Execution Time: 13791 milliseconds
+std::sort Time: 11935 milliseconds
 Pass the sorting result check!
 Number of cores: 4
 Quick Sort Complete!
-Execution Time: 9821 milliseconds
-std::sort Time: 16000 milliseconds
+Execution Time: 9784 milliseconds
+std::sort Time: 15920 milliseconds
 Pass the sorting result check!
 Number of cores: 16
 Quick Sort Complete!
-Execution Time: 9604 milliseconds
-std::sort Time: 15918 milliseconds
+Execution Time: 9615 milliseconds
+std::sort Time: 15917 milliseconds
 Pass the sorting result check!
 Number of cores: 32
 Quick Sort Complete!
-Execution Time: 10667 milliseconds
-std::sort Time: 15995 milliseconds
+Execution Time: 10761 milliseconds
+std::sort Time: 15975 milliseconds
 Pass the sorting result check!
 
 PSRS for Normal dataset (Optimized with -O2)
 Number of cores: 1
-[node07:0] Phase 0 took 6313 ms
-[node07:0] Phase Merge took 238 ms
+[node09:0] Phase 0 took 6296 ms
+[node09:0] Phase Merge took 237 ms
 Sorting Complete!
-Execution Time: 15978 		milliseconds
-std::sort Time: 12102 milliseconds
+Execution Time: 15980 		milliseconds
+std::sort Time: 12104 milliseconds
 Pass the sorting result check!
 Number of cores: 4
-[node07:0] Phase 0 took 8339 ms
-[node07:0] Phase Merge took 362 ms
+[node09:0] Phase 0 took 8330 ms
+[node09:0] Phase Merge took 361 ms
 Sorting Complete!
 Execution Time: 7864 		milliseconds
-std::sort Time: 16103 milliseconds
+std::sort Time: 16093 milliseconds
 Pass the sorting result check!
 Number of cores: 16
-[node07:0] Phase 0 took 8279 ms
-[node07:0] Phase Merge took 355 ms
+[node09:0] Phase 0 took 8287 ms
+[node09:0] Phase Merge took 356 ms
 Sorting Complete!
-Execution Time: 1945 		milliseconds
-std::sort Time: 16200 milliseconds
+Execution Time: 1947 		milliseconds
+std::sort Time: 16143 milliseconds
 Pass the sorting result check!
 Number of cores: 32
-[node07:0] Phase 0 took 8307 ms
-[node07:0] Phase Merge took 341 ms
+[node09:0] Phase 0 took 8308 ms
+[node09:0] Phase Merge took 342 ms
 Sorting Complete!
-Execution Time: 1138 		milliseconds
-std::sort Time: 16232 milliseconds
+Execution Time: 1140 		milliseconds
+std::sort Time: 16222 milliseconds
 Pass the sorting result check!
 
 Merge Sort for Normal dataset (Optimized with -O2)
 Number of threads: 1
 Merge Sort Complete!
-Execution Time: 23543 milliseconds
-std::sort Time: 11921 milliseconds
+Execution Time: 23538 milliseconds
+std::sort Time: 11931 milliseconds
 Pass the sorting result check!
 Number of threads: 4
 Merge Sort Complete!
-Execution Time: 23528 milliseconds
-std::sort Time: 11927 milliseconds
+Execution Time: 23577 milliseconds
+std::sort Time: 11930 milliseconds
 Pass the sorting result check!
 Number of threads: 16
 Merge Sort Complete!
-Execution Time: 23525 milliseconds
-std::sort Time: 11925 milliseconds
-Pass the sorting result check!
-Number of threads: 32
+Execution Time: 23570 milliseconds
 srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-slurmstepd: error: *** JOB 259487 ON node07 CANCELLED AT 2024-11-15T11:21:56 DUE TO TIME LIMIT ***
-slurmstepd: error: *** STEP 259487.16 ON node07 CANCELLED AT 2024-11-15T11:21:56 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 260175 ON node09 CANCELLED AT 2024-11-16T01:17:26 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 260175.15 ON node09 CANCELLED AT 2024-11-16T01:17:26 DUE TO TIME LIMIT ***

@@ -1,0 +1,15 @@
+# started on Sat Nov 16 01:09:28 2024
+
+
+ Performance counter stats for 'srun -n 32 --cpus-per-task 1 --mpi=pmi2 ./build/src/bucketsort/bucketsort_mpi uniform 100000000 1000000':
+
+            50,669      cache-misses:u            #   34.717 % of all cache refs    
+           145,950      cache-references:u                                          
+             1,625      page-faults:u                                               
+
+      46.103955504 seconds time elapsed
+
+       0.009607000 seconds user
+       0.015372000 seconds sys
+
+

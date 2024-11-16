@@ -1,0 +1,15 @@
+# started on Sat Nov 16 01:10:50 2024
+
+
+ Performance counter stats for 'srun -n 1 --cpus-per-task 1 --mpi=pmi2 ./build/src/quicksort/quicksort_mpi normal 100000000':
+
+            46,982      cache-misses:u            #   33.411 % of all cache refs    
+           140,619      cache-references:u                                          
+             1,622      page-faults:u                                               
+
+      32.228600274 seconds time elapsed
+
+       0.011319000 seconds user
+       0.013583000 seconds sys
+
+
