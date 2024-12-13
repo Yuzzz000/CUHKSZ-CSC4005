@@ -1,0 +1,46 @@
+Current directory: /nfsmnt/121090741/CUHKSZ-CSC4005/project4
+Sequential (Optimized with -O2)
+Training two layer neural network 400 hidden units
+| Epoch |  Acc Rate  |  Training Time
+|     1 |   82.790%  |   46848 ms
+|     2 |   85.000%  |   46849 ms
+|     3 |   88.890%  |   46835 ms
+|     4 |   90.190%  |   46820 ms
+|     5 |   88.980%  |   46814 ms
+|     6 |   90.880%  |   46809 ms
+|     7 |   90.660%  |   46815 ms
+|     8 |   91.350%  |   46831 ms
+|     9 |   91.400%  |   46816 ms
+|    10 |   90.790%  |   46814 ms
+Execution Time: 513459 milliseconds
+
+OpenACC kernel
+Training two layer neural network 400 hidden units
+| Epoch |  Acc Rate  |  Training Time
+|     1 |   0.000%  |   0 ms
+|     2 |   0.000%  |   0 ms
+|     3 |   0.000%  |   0 ms
+|     4 |   0.000%  |   0 ms
+|     5 |   0.000%  |   0 ms
+|     6 |   0.000%  |   0 ms
+|     7 |   0.000%  |   0 ms
+|     8 |   0.000%  |   0 ms
+|     9 |   0.000%  |   0 ms
+|    10 |   0.000%  |   0 ms
+Execution Time: 0 milliseconds
+
+OpenACC fusion
+Training two layer neural network 400 hidden units
+| Epoch |  Acc Rate  |  Training Time
+|     1 |   0.000%  |   0 ms
+|     2 |   0.000%  |   0 ms
+|     3 |   0.000%  |   0 ms
+|     4 |   0.000%  |   0 ms
+|     5 |   0.000%  |   0 ms
+|     6 |   0.000%  |   0 ms
+|     7 |   0.000%  |   0 ms
+|     8 |   0.000%  |   0 ms
+|     9 |   0.000%  |   0 ms
+|    10 |   0.000%  |   0 ms
+Execution Time: 0 milliseconds
+
